@@ -12,7 +12,6 @@ I am passionate about any subject that involves technology, especially in the ar
 <p align="justify">
 I always try to keep up to date with new technologies, especially issues involving mobile development. I have experience with cross-platform mobile development with Dart/Flutter, desktop application development using Delphi/Object Pascal, and also in the WEB area using HTML, CSS, Javascript.
 </p>
-</br>
 
 <div align="center">
   <a href="https://github.com/claudneysessa">
