@@ -12,8 +12,7 @@ I am passionate about any subject that involves technology, especially in the ar
 <p align="justify">
 I always try to keep up to date with new technologies, especially issues involving mobile development. I have experience with cross-platform mobile development with Dart/Flutter, desktop application development using Delphi/Object Pascal, and also in the WEB area using HTML, CSS, Javascript.
 </p>
-
-<br>
+</br>
 
 # Olá, sou Claudney Sarti Sessa
 ## Sobre mim
@@ -37,9 +36,57 @@ Procuro sempre me manter atualizado com as novas tecnologias, principalmente que
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=claudneysessa&layout=compact&langs_count=7&theme=dracula"/>
   </a>
 </div>
-  
+
+<br/>
+
+# Favorite Tech
+
+> Tools, languages, and other things that I like to work with.
+
+<table border="0">
+  <tr>
+    <td align="center" width="96">
+      <a href="#Delphi-tech">
+        <img align="center" alt="devcss-Js" height="45" width="45" src="https://github.com/claudneysessa/claudneysessa/blob/main/delphi-plain.png?raw=true">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#Dart-tech">
+        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-plain.svg">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#flutter-tech">
+        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-plain.svg">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#JavaScript-tech">
+        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+      </a>
+    </td>
+  </tr>
+</table>
+
+# Where to find me
+
 <div align="center">
-  <img src="https://raw.githubusercontent.com/claudneysessa/claudneysessa/27a8638d52a168508295a6e0dd01c2a876b4acdb/github-contribution-grid-snake.svg"/>
+    <a href="https://www.youtube.com/channel/UC52P3HVpmOMHjkmIhcjLRyQ" target="_blank">
+      <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank">
+    </a>
+    <a href="https://instagram.com/claudneysessa" target="_blank">
+      <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank">
+    </a>
+    <a href = "mailto:claudneysartisessa@gmail.com">
+      <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank">
+    </a>
+    <a href="https://www.linkedin.com/in/claudneysessa/" target="_blank">
+      <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+    </a>
+    <a href="https://medium.com/@claudneysartisessa" target="_blank">
+      <img alt="Medium" src="https://img.shields.io/badge/medium-%2312100E.svg?&style=for-the-badge&logo=medium&logoColor=white" />
+    </a>
+    <img src="https://raw.githubusercontent.com/claudneysessa/claudneysessa/27a8638d52a168508295a6e0dd01c2a876b4acdb/github-contribution-grid-snake.svg"/>
 </div>
 
 ## Contact
