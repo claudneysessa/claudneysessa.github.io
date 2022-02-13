@@ -15,6 +15,22 @@ I always try to keep up to date with new technologies, especially issues involvi
 
 <br>
 
+# Olá, sou Claudney Sarti Sessa
+## Sobre mim
+
+<p align="justify">
+Sou bacharel em Sistemas de Informação e Especializado em Engenharia de Software, sou um profissional dedicado, me considero autodidata quando o assunto é tecnologia, sou criativo, dedicado e tenho um bom relacionamento interpessoal, o que me torna capaz agregar valor a qualquer equipe onde eu me encaixe.
+</p>
+
+<p align="justify">
+Sou apaixonado por qualquer assunto que envolva tecnologia, principalmente na área de desenvolvimento de sistemas, adoro resolver problemas e inovar. Estudei na FAESA e, no momento, trabalho como desenvolvedor full stack tanto para sistemas Windows desktop com Object Pascal/Delphi quanto na parte mobile com dart/flutter.
+</p>
+
+<p align="justify">
+Procuro sempre me manter atualizado com as novas tecnologias, principalmente questões envolvendo desenvolvimento mobile. Tenho experiência com desenvolvimento mobile multiplataforma com Dart/Flutter, desenvolvimento de aplicações desktop utilizando Delphi/Object Pascal, e também na área WEB utilizando HTML, CSS, Javascript.
+</p>
+</br>
+
 <div align="center">
   <a href="https://github.com/claudneysessa">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=claudneysessa&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
