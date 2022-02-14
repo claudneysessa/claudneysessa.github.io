@@ -41,32 +41,57 @@ Procuro sempre me manter atualizado com as novas tecnologias, principalmente que
 
 # Favorite Tech
 
-> Tools, languages, and other things that I like to work with.
+<div align="center">
+  
+Tools, languages, and other things that I like to work with.
+  
+<br/>
 
 <table border="0">
   <tr>
     <td align="center" width="96">
       <a href="#Delphi-tech">
-        <img align="center" alt="devcss-Js" height="45" width="45" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/delphi-plain.png?raw=true">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/delphi-plain.png?raw=true">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#HashLoadHorse-tech">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/horse.png?raw=true">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#Android-tech">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/android-svg.png?raw=true">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#AndroidStudio-tech">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/android%20studio.png?raw=true">
+      </a>
+    </td>
+    <td align="center" width="96">
+      <a href="#VisualStudioCode-tech">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/visual%20studio%20code.png?raw=true">
       </a>
     </td>
     <td align="center" width="96">
       <a href="#Dart-tech">
-        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-plain.svg">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-plain.svg">
       </a>
     </td>
     <td align="center" width="96">
       <a href="#flutter-tech">
-        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-plain.svg">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-plain.svg">
       </a>
     </td>
     <td align="center" width="96">
       <a href="#JavaScript-tech">
-        <img align="center" alt="devcss-Js" height="45" width="45" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+        <img align="center" alt="devcss-Js" height="65" width="65" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
       </a>
     </td>
   </tr>
 </table>
+  </div>
 
 # Where to find me
 
