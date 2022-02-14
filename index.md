@@ -47,7 +47,7 @@ Procuro sempre me manter atualizado com as novas tecnologias, principalmente que
   <tr>
     <td align="center" width="96">
       <a href="#Delphi-tech">
-        <img align="center" alt="devcss-Js" height="45" width="45" src="https://github.com/claudneysessa/claudneysessa/blob/main/delphi-plain.png?raw=true">
+        <img align="center" alt="devcss-Js" height="45" width="45" src="https://github.com/claudneysessa/claudneysessa/blob/main/images/language_icons/delphi-plain.png?raw=true">
       </a>
     </td>
     <td align="center" width="96">
