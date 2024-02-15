@@ -1,19 +1,3 @@
-# Hi, I'm Claudney Sarti Sessa
-## About me
-
-<p align="justify">
-I have a bachelor's degree in Information Systems and a Specialization in Software Engineering, I am a dedicated professional, I consider myself self-taught when it comes to technology, I am creative, dedicated and I have a good interpersonal relationship, which makes me able to add value to any team where I fit.
-</p>
-
-<p align="justify">
-I am passionate about any subject that involves technology, especially in the area of system development, I love solving problems and innovating. I studied at FAESA and, at the moment, I work as a full stack developer for both desktop windows systems with Object Pascal/Delphi and on the mobile part with dart/flutter.
-</p>
-
-<p align="justify">
-I always try to keep up to date with new technologies, especially issues involving mobile development. I have experience with cross-platform mobile development with Dart/Flutter, desktop application development using Delphi/Object Pascal, and also in the WEB area using HTML, CSS, Javascript.
-</p>
-</br>
-
 # Olá, sou Claudney Sarti Sessa
 ## Sobre mim
 
@@ -27,6 +11,22 @@ Sou apaixonado por qualquer assunto que envolva tecnologia, principalmente na á
 
 <p align="justify">
 Procuro sempre me manter atualizado com as novas tecnologias, principalmente questões envolvendo desenvolvimento mobile. Tenho experiência com desenvolvimento mobile multiplataforma com Dart/Flutter, desenvolvimento de aplicações desktop utilizando Delphi/Object Pascal, e também na área WEB utilizando HTML, CSS, Javascript.
+</p>
+</br>
+
+# Hi, I'm Claudney Sarti Sessa
+## About me
+
+<p align="justify">
+I have a bachelor's degree in Information Systems and a Specialization in Software Engineering, I am a dedicated professional, I consider myself self-taught when it comes to technology, I am creative, dedicated and I have a good interpersonal relationship, which makes me able to add value to any team where I fit.
+</p>
+
+<p align="justify">
+I am passionate about any subject that involves technology, especially in the area of system development, I love solving problems and innovating. I studied at FAESA and, at the moment, I work as a full stack developer for both desktop windows systems with Object Pascal/Delphi and on the mobile part with dart/flutter.
+</p>
+
+<p align="justify">
+I always try to keep up to date with new technologies, especially issues involving mobile development. I have experience with cross-platform mobile development with Dart/Flutter, desktop application development using Delphi/Object Pascal, and also in the WEB area using HTML, CSS, Javascript.
 </p>
 </br>
 
