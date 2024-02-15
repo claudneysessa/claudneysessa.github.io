@@ -114,6 +114,6 @@ Ferramentas, linguagens e outras coisas com as quais gosto de trabalhar.
     <img src="https://raw.githubusercontent.com/claudneysessa/claudneysessa/27a8638d52a168508295a6e0dd01c2a876b4acdb/github-contribution-grid-snake.svg"/>
 </div>
 
-## Contact
+## Contatos
  - Instagram: [https://www.instagram.com/claudneysessa/](https://www.instagram.com/claudneysessa/)
  - Linkedin: [https://www.linkedin.com/in/claudneysessa/](https://www.linkedin.com/in/claudneysessa/)
