@@ -17,8 +17,8 @@
       "demoUrl": "#",
       "codeUrl": "#",
       "tags": {
-        "pt": ["Delphi", "Fiscal"],
-        "en": ["Delphi", "Tax"]
+        "pt": [".NET", "Integração"],
+        "en": [".NET", "Integration"]
       },
       "pt": {
         "name": "Nome do projeto",

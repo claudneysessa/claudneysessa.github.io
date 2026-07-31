@@ -25,21 +25,21 @@
       cmd: "claudney_sarti_sessa --profile",
       loading: "carregando profile.md ...",
       replay: "REPLAY",
-      roleBadges: ["Analista de Sistemas", "ERP e fiscal eletrônico", "IA aplicada"],
+      roleBadges: ["Analista de Sistemas", "Sistemas corporativos", "IA aplicada"],
       bio1a: "Bacharel em Sistemas de Informação, com ",
       bio1b: "mais de 20 anos de experiência",
-      bio1c: " em ERP e em sistemas voltados à área fiscal brasileira — com destaque para ",
-      bio1d: "documentos eletrônicos",
-      bio1e: ". É um domínio que não perdoa erro: regra fiscal errada gera contingência, autuação e prejuízo real para quem depende do sistema.",
+      bio1c: " em desenvolvimento de ",
+      bio1d: "sistemas corporativos",
+      bio1e: ". Sistemas que rodam em produção, com gente dependendo deles todos os dias.",
       bio2a: "Sou ",
       bio2b: "desenvolvedor sênior",
       bio2c: " e programo em ",
-      bio2d: "Delphi, Flutter e .NET",
+      bio2d: ".NET, Flutter e JavaScript",
       bio2e: ", e atuo com ",
       bio2f: "IA aplicada e engenharia de prompts",
       bio2g: ". Os projetos ao lado são onde eu levo essa prática para o navegador — e onde mostro o raciocínio por trás da solução, não só o resultado.",
       skillsTitle: "Especialidades",
-      skills: ["ERP", "Fiscal brasileiro", "Documentos eletrônicos", "Delphi", "Flutter", ".NET", "IA aplicada", "Engenharia de prompts"],
+      skills: ["Sistemas corporativos", ".NET", "Flutter", "JavaScript", "IA aplicada", "Engenharia de prompts"],
       eduTitle: "Formação",
       education: [
         { course: "Eng. de Software com IA Aplicada", level: "pós · ", note: "em andamento" },
@@ -53,7 +53,7 @@
       introB: "a inferência roda no navegador de quem visita",
       introC: ". Sem servidor de IA, sem conta, sem enviar dados para fora do dispositivo. Todos têm demonstração ao vivo e código aberto.",
       codeLabel: "codigo",
-      ctaTitle: "Quer conversar sobre ERP, fiscal ou IA aplicada?",
+      ctaTitle: "Quer conversar sobre tecnologias, sistemas e IA aplicada?",
       ctaSub: "Respondo por e-mail e LinkedIn em até um dia útil.",
       ctaBtn: "Enviar e-mail",
       openBtn: "abrir_portfolio",
@@ -62,7 +62,7 @@
       countMany: "projetos",
       altPrefix: "Captura de tela do projeto",
       pageTitle:
-        "claudney_sarti_sessa — Desenvolvedor sênior · ERP, fiscal eletrônico, IA aplicada"
+        "claudney_sarti_sessa — Desenvolvedor sênior · .NET, Flutter e JavaScript · IA aplicada"
     },
     en: {
       profileTitle: "Profile",
@@ -72,21 +72,21 @@
       cmd: "claudney_sarti_sessa --profile",
       loading: "loading profile.md ...",
       replay: "REPLAY",
-      roleBadges: ["Systems Analyst", "ERP & e-invoicing", "Applied AI"],
+      roleBadges: ["Systems Analyst", "Enterprise systems", "Applied AI"],
       bio1a: "Bachelor's in Information Systems, with ",
       bio1b: "over 20 years of experience",
-      bio1c: " in ERP and systems built around Brazilian tax legislation — especially ",
-      bio1d: "electronic fiscal documents",
-      bio1e: ". It is a domain that does not forgive mistakes: one wrong tax rule means contingency mode, fines and real losses for whoever depends on the system.",
+      bio1c: " building ",
+      bio1d: "enterprise systems",
+      bio1e: ". Systems that run in production, with people depending on them every day.",
       bio2a: "I am ",
       bio2b: "a senior developer",
       bio2c: " and I program in ",
-      bio2d: "Delphi, Flutter and .NET",
+      bio2d: ".NET, Flutter and JavaScript",
       bio2e: ", and I work with ",
       bio2f: "applied AI and prompt engineering",
       bio2g: ". The projects beside this are where I take that practice into the browser — and where I show the reasoning behind the solution, not just the result.",
       skillsTitle: "Specialties",
-      skills: ["ERP", "Brazilian tax", "E-invoicing", "Delphi", "Flutter", ".NET", "Applied AI", "Prompt engineering"],
+      skills: ["Enterprise systems", ".NET", "Flutter", "JavaScript", "Applied AI", "Prompt engineering"],
       eduTitle: "Education",
       education: [
         { course: "Software Eng. with Applied AI", level: "postgrad · ", note: "in progress" },
@@ -100,7 +100,7 @@
       introB: "inference runs in the visitor's own browser",
       introC: ". No AI server, no account, no data leaving the device. All of them have a live demo and open source code.",
       codeLabel: "code",
-      ctaTitle: "Want to talk about ERP, tax systems or applied AI?",
+      ctaTitle: "Want to talk about technology, systems and applied AI?",
       ctaSub: "I reply by email and LinkedIn within one business day.",
       ctaBtn: "Send email",
       openBtn: "open_portfolio",
@@ -109,7 +109,7 @@
       countMany: "projects",
       altPrefix: "Screenshot of the",
       pageTitle:
-        "claudney_sarti_sessa — Senior developer · ERP, e-invoicing, applied AI"
+        "claudney_sarti_sessa — Senior developer · .NET, Flutter, JavaScript · applied AI"
     }
   };
 
