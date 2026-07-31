@@ -45,12 +45,13 @@ Sem build, sem framework, sem dependência externa em runtime.
 - Fonte JetBrains Mono self-hosted (31 KB, um arquivo para os dois pesos).
 - Prints convertidos para WebP a 800px: 1,6 MB → 132 KB.
 
+- **Conferido no navegador por Claudney em 31/07/2026**: página principal e
+  Monitor. O Monitor é alcançado pelo botão `▶ animated version` da barra, a
+  sequência de boot roda e a página se comporta normalmente.
+
 ## Não validado
 
-- **Inspeção visual das duas páginas no navegador.** Publicado por decisão
-  explícita de Claudney antes dessa etapa. A animação de boot do CRT, o flicker,
-  a grade em perspectiva e o comportamento nas três larguras seguem sem
-  conferência visual registrada.
+- Responsividade nas três larguras exigidas pelo padrão da raiz.
 - Comportamento em navegadores além do Chrome.
 
 ## Pendências
