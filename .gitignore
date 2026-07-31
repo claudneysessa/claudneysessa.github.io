@@ -1,0 +1,6 @@
+# Referências de design e protótipos: material de trabalho, não vão para o site.
+/handoff/
+
+.DS_Store
+Thumbs.db
+node_modules/

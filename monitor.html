@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>claudney_sarti_sessa — animated version</title>
+    <meta
+      name="description"
+      content="Animated CRT version of Claudney Sarti Sessa's profile: senior developer, 20+ years in ERP and Brazilian tax systems, applied AI and prompt engineering."
+    />
+    <link rel="canonical" href="https://claudneysessa.github.io/monitor.html" />
+    <meta name="robots" content="noindex, follow" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%2305070A'/><text x='3' y='23' font-family='monospace' font-size='19' fill='%234ADE80'>~/</text></svg>"
+    />
+    <link rel="preload" href="./assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/monitor.css" />
+  </head>
+  <body class="crt">
+    <div class="scene">
+      <div class="bg-lines" aria-hidden="true"></div>
+      <div class="floor" aria-hidden="true"></div>
+      <div class="halo" aria-hidden="true"></div>
+
+      <div class="monitor">
+        <div class="bezel">
+          <div class="screen">
+            <p class="screen-bar">
+              CRT-4200 <span aria-hidden="true">·</span> <span id="crumb">profile</span>
+            </p>
+
+            <div class="screen-scroll" id="boot">
+              <p class="line-cmd">
+                <span class="host">guest@crt:~$</span>
+                <span id="typed">claudney_sarti_sessa --profile</span
+                ><span class="cursor2" aria-hidden="true"></span>
+              </p>
+
+              <p class="line-loading reveal" id="loading">
+                &gt; <span id="loading-text">loading profile.md ...</span>
+              </p>
+
+              <h1 class="crt-name reveal">Claudney Sarti Sessa</h1>
+
+              <div class="crt-badges reveal" id="crt-badges"></div>
+
+              <p class="crt-bio reveal" id="crt-bio1"></p>
+
+              <div class="crt-block reveal">
+                <p class="crt-bio" id="crt-bio2"></p>
+                <ul class="chips" id="crt-skills"></ul>
+              </div>
+
+              <div class="crt-cta reveal">
+                <a class="open-btn" href="./index.html" id="open-btn">./open_portfolio</a>
+                <span class="hint" id="hint"></span>
+                <div class="crt-links" id="crt-links"></div>
+              </div>
+            </div>
+
+            <div class="scan" aria-hidden="true"></div>
+            <div class="glass" aria-hidden="true"></div>
+          </div>
+
+          <div class="base">
+            <span class="pwr"><i aria-hidden="true"></i> PWR</span>
+            <div class="controls">
+              <button type="button" class="lang" data-lang="en">EN</button>
+              <button type="button" class="lang" data-lang="pt">PT-BR</button>
+              <button type="button" class="crt-btn" id="replay">REPLAY</button>
+              <a class="crt-btn" href="./index.html" id="exit">EXIT CRT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="pedestal" aria-hidden="true"><span></span><span></span></div>
+      </div>
+    </div>
+
+    <!-- Ordem obrigatória: projects.js → content.js → página. -->
+    <script src="./assets/projects.js"></script>
+    <script src="./assets/content.js"></script>
+    <script src="./assets/lang.js"></script>
+    <script src="./assets/monitor.js"></script>
+  </body>
+</html>
