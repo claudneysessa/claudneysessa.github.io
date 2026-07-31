@@ -63,6 +63,11 @@ Sem build, sem framework, sem dependência externa em runtime.
 
 ## Não refazer
 
+- **O Monitor não é a porta de entrada.** Avaliado e decidido por Claudney em
+  31/07/2026: esperar a digitação atrapalha quem chega com pressa, e o atrito na
+  primeira dobra custa mais que o efeito rende. `index.html` segue sendo o
+  portfólio; o CRT continua opcional, atrás do botão `▶ animated version`.
+
 - Não voltar ao Jekyll: sem Ruby na máquina, não daria para pré-visualizar antes
   de publicar, e este repositório publica na hora.
 - Não reintroduzir dependência externa em runtime (Google Fonts, shields.io,
