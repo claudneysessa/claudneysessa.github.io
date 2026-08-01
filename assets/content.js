@@ -123,8 +123,14 @@
     t.bio1 = t.bio1a + t.bio1b + t.bio1c + t.bio1d + t.bio1e;
     t.bio2 = t.bio2a + t.bio2b + t.bio2c + t.bio2d + t.bio2e + t.bio2f + t.bio2g;
 
-    // contagens sempre derivadas da lista de projetos
-    var total = GROUPS.reduce(function (n, g) { return n + g.slugs.length; }, 0);
+    // Contagens sempre derivadas da lista de projetos. Slugs DISTINTOS: um
+    // projeto pode estar em mais de um grupo (os grupos são recortes de leitura,
+    // não uma partição), e somar g.slugs.length inflaria o total.
+    var seen = {};
+    GROUPS.forEach(function (g) {
+      g.slugs.forEach(function (slug) { seen[slug] = true; });
+    });
+    var total = Object.keys(seen).length;
     t.total = total;
     t.introA = t.introA.replace("{n}", total);
     t.ctaHint = t.ctaHint.replace("{n}", total);

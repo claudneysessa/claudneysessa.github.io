@@ -213,6 +213,11 @@ window.PF_PROJECTS = {
     { "id": "cv", "slugs": ["libras-lab", "cratebound"], "pt": "Visão computacional no navegador", "en": "Computer vision in the browser" },
     { "id": "learn", "slugs": ["snakeia"], "pt": "Redes que aprendem no navegador", "en": "Networks that learn in the browser" },
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
-    { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" }
+    { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
+    { "id": "oss", "slugs": ["local-token-monitor"], "pt": "Open Source", "en": "Open Source" },
+    { "id": "contrib", "slugs": ["paygo_sdk"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]
+  /* Um projeto pode aparecer em mais de um grupo — os grupos são recortes de
+     leitura, não uma partição. Por isso o total conta slugs distintos: somar
+     g.slugs.length contaria o repetido duas vezes. Ver content.js. */
 };
