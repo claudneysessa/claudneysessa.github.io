@@ -206,6 +206,26 @@ window.PF_PROJECTS = {
         "desc": "Flutter library that abstracts URI and Android Intent communication with the PayGO Integrado app. You work with Dart objects and operations instead of assembling each protocol message by hand.",
         "note": "Co-authored with Daniel Oliveira Souza, in partnership with PayGo — the only one here that is not solo. A library has no screen: the project mark stands in for a screenshot."
       }
+    },
+    "mcp-gemini-video": {
+      "shot": "./assets/shots/logo-gemini.webp",
+      "media": "logo",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/mcp-gemini-video",
+      "tags": {
+        "pt": ["MCP", "Python", "Google Gemini", "Docker", "Claude Code"],
+        "en": ["MCP", "Python", "Google Gemini", "Docker", "Claude Code"]
+      },
+      "pt": {
+        "name": "Gemini Video",
+        "desc": "Três formas independentes de transformar um vídeo do seu disco em relatório escrito: servidor MCP em stdio, servidor MCP em container por SSE e uma skill autocontida do Claude Code. Escolhe-se uma, e as três gravam o mesmo .md ao lado do vídeo, com transcrição do áudio, descrição das telas e resumo funcional.",
+        "note": "Sem demonstração: são dois servidores MCP e um comando, sem tela para capturar — no lugar do print, a marca do Gemini. É também o único projeto daqui que depende de serviço externo: o vídeo sobe para a API do Google com a sua chave, e o README diz isso na primeira seção."
+      },
+      "en": {
+        "name": "Gemini Video",
+        "desc": "Three independent ways to turn a video on your disk into a written report: an MCP server over stdio, an MCP server in a container over SSE, and a self-contained Claude Code skill. You pick one, and all three write the same .md next to the video, with the audio transcript, a description of the screens and a functional summary.",
+        "note": "No demo: two MCP servers and a command, with no screen to capture — the Gemini mark stands in for a screenshot. It is also the only project here that depends on an external service: the video is uploaded to Google's API with your own key, and the README says so in its first section."
+      }
     }
   },
   "groups": [
@@ -213,6 +233,7 @@ window.PF_PROJECTS = {
     { "id": "cv", "slugs": ["libras-lab", "cratebound"], "pt": "Visão computacional no navegador", "en": "Computer vision in the browser" },
     { "id": "learn", "slugs": ["snakeia"], "pt": "Redes que aprendem no navegador", "en": "Networks that learn in the browser" },
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
+    { "id": "mcp", "slugs": ["mcp-gemini-video"], "pt": "MCP e skills para agentes", "en": "MCP servers and agent skills" },
     { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
     { "id": "oss", "slugs": ["local-token-monitor"], "pt": "Open Source", "en": "Open Source" },
     { "id": "contrib", "slugs": ["paygo_sdk"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
