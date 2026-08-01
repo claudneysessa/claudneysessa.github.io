@@ -226,6 +226,29 @@ window.PF_PROJECTS = {
         "desc": "Three independent ways to turn a video on your disk into a written report: an MCP server over stdio, an MCP server in a container over SSE, and a self-contained Claude Code skill. You pick one, and all three write the same .md next to the video, with the audio transcript, a description of the screens and a functional summary.",
         "note": "No demo: two MCP servers and a command, with no screen to capture — the Gemini mark stands in for a screenshot. It is also the only project here that depends on an external service: the video is uploaded to Google's API with your own key, and the README says so in its first section."
       }
+    },
+    "medina-trainer": {
+      "shot": "./assets/shots/logo-medina.webp",
+      "media": "logo",
+      "plate": "dark",
+      "demoUrl": "https://medinatrainer.com.br/",
+      "codeUrl": null,
+      "tags": {
+        "pt": ["PHP 8", "API REST", "JWT", "Docker", "MariaDB"],
+        "en": ["PHP 8", "REST API", "JWT", "Docker", "MariaDB"]
+      },
+      "pt": {
+        "name": "Medina Trainer",
+        "desc": "Site e plataforma de gestão para um personal trainer: landing pública que o próprio professor edita, painel de administração com agenda, modalidades, matrículas e cobranças, e área do aluno com auto-agendamento que respeita vagas e conflitos de horário. Uma API PHP única atende as três áreas.",
+        "note": "Trabalho entregue a cliente, publicado com autorização. O código é fechado: o card leva ao site no ar, não a um repositório — e a marca é do cliente, não uma captura.",
+        "demoLabel": "site"
+      },
+      "en": {
+        "name": "Medina Trainer",
+        "desc": "Website and management platform for a personal trainer: a public landing page the trainer edits himself, an admin panel with schedule, class types, enrollments and billing, and a student area with self-booking that respects capacity and schedule conflicts. A single PHP API serves all three.",
+        "note": "Client work, published with permission. The source is closed: the card links to the live site, not to a repository — and the image is the client's mark, not a screenshot.",
+        "demoLabel": "site"
+      }
     }
   },
   "groups": [
@@ -235,6 +258,7 @@ window.PF_PROJECTS = {
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
     { "id": "mcp", "slugs": ["mcp-gemini-video"], "pt": "MCP e skills para agentes", "en": "MCP servers and agent skills" },
     { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
+    { "id": "client", "slugs": ["medina-trainer"], "pt": "Trabalho para clientes", "en": "Client work" },
     { "id": "oss", "slugs": ["local-token-monitor"], "pt": "Open Source", "en": "Open Source" },
     { "id": "contrib", "slugs": ["paygo_sdk"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]

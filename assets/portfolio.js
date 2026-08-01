@@ -42,20 +42,31 @@
         }),
       );
     }
-    out.push(
-      el("a", {
-        href: project.codeUrl,
-        target: "_blank",
-        rel: "noopener",
-        text: "./" + t.codeLabel,
-      }),
-    );
+    // codeUrl null = trabalho cujo código não é público (site de cliente).
+    // O card mostra só a demonstração; um dos dois links sempre existe.
+    if (project.codeUrl) {
+      out.push(
+        el("a", {
+          href: project.codeUrl,
+          target: "_blank",
+          rel: "noopener",
+          text: "./" + t.codeLabel,
+        }),
+      );
+    }
     return out;
   }
 
   function card(project, t) {
-    // Logotipo de biblioteca não é captura: ganha placa clara e não é cortado.
-    var media = el("div", { class: project.media === "logo" ? "shot shot--logo" : "shot" }, [
+    // Logotipo não é captura: ganha placa e não é cortado. A placa é clara por
+    // padrão e escura quando a marca tem partes brancas, que sumiriam na clara.
+    var classes = "shot";
+    if (project.media === "logo") {
+      classes += " shot--logo";
+      if (project.plate === "dark") classes += " shot--logo-dark";
+    }
+
+    var media = el("div", { class: classes }, [
       el("img", {
         src: project.shot,
         alt: project.shotAlt,

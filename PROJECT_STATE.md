@@ -81,6 +81,19 @@ Sem build, sem framework, sem dependência externa em runtime.
   processamento é local ou se fala direto com um serviço usando a chave de quem
   usa.
 
+- **01/08/2026 — entrada do Medina Trainer, primeiro trabalho de cliente**
+  (10 projetos, 9 grupos, grupo novo "Trabalho para clientes"). Duas capacidades
+  novas na camada de dados, ambas com o verificador exercitado contra os casos
+  que ele **deve** reprovar (`codeUrl` com `"#"`, chave `codeUrl` ausente,
+  `plate` em card de captura, `demoUrl` e `codeUrl` nulos ao mesmo tempo — todos
+  reprovaram):
+  - `codeUrl: null` para código fechado. O card mostra só o link do site.
+  - `plate: "dark"` para logotipo com partes brancas, que somem na placa clara.
+  A intro caiu pela terceira vez: "todos têm código aberto" e o alcance de "nada
+  passa por servidor meu" não sobrevivem a um sistema de cliente hospedado. A
+  solução foi estreitar o escopo — o fio condutor passa a valer para os
+  experimentos, e a exceção é nomeada na própria intro.
+
 ## Não validado
 
 - Responsividade em largura de celular real. O Chrome headless não desce abaixo

@@ -49,15 +49,15 @@
       ],
       linksTitle: "Onde me encontrar",
       portfolioTitle: "Portfólio",
-      introA: "{n} projetos com um fio condutor: ",
+      introA: "{n} projetos. Nos experimentos, o fio condutor é que ",
       introB: "nada passa por servidor meu",
-      introC: ". Sem conta e sem intermediário: ou o processamento acontece no seu dispositivo, ou você fala direto com o serviço usando a sua própria chave — e cada projeto diz qual dos dois é o caso. Todos têm código aberto; a maioria roda direto no navegador, com demonstração ao vivo.",
+      introC: " — o processamento acontece no seu dispositivo, ou você fala direto com o serviço usando a sua própria chave. A maioria tem código aberto e roda no navegador, com demonstração ao vivo. A exceção está declarada no próprio card: um sistema entregue a cliente, de código fechado.",
       codeLabel: "codigo",
       ctaTitle: "Quer conversar sobre tecnologias, sistemas e IA aplicada?",
       ctaSub: "Respondo por e-mail e LinkedIn em até um dia útil.",
       ctaBtn: "Enviar e-mail",
       openBtn: "abrir_portfolio",
-      ctaHint: "{n} projetos que rodam na sua máquina",
+      ctaHint: "{n} projetos, do experimento ao sistema entregue",
       countOne: "projeto",
       countMany: "projetos",
       altPrefix: "Captura de tela do projeto",
@@ -97,15 +97,15 @@
       ],
       linksTitle: "Where to find me",
       portfolioTitle: "Portfolio",
-      introA: "{n} projects with one common thread: ",
+      introA: "{n} projects. Across the experiments, the common thread is that ",
       introB: "nothing goes through a server of mine",
-      introC: ". No account and no middleman: either the processing happens on your own device, or you talk straight to the service with your own key — and each project says which of the two it is. All of them are open source; most run straight in the browser, with a live demo.",
+      introC: " — the processing happens on your own device, or you talk straight to the service with your own key. Most are open source and run in the browser, with a live demo. The exception is declared on its own card: a system delivered to a client, closed source.",
       codeLabel: "code",
       ctaTitle: "Want to talk about technology, systems and applied AI?",
       ctaSub: "I reply by email and LinkedIn within one business day.",
       ctaBtn: "Send email",
       openBtn: "open_portfolio",
-      ctaHint: "{n} projects that run on your own machine",
+      ctaHint: "{n} projects, from experiment to delivered system",
       countOne: "project",
       countMany: "projects",
       altPrefix: "Screenshot of the",
@@ -154,14 +154,19 @@
           demoLabel: loc.demoLabel || null,
           tags: p.tags[lang],
           shot: p.shot,
-          // "shot" (captura real) ou "logo" (biblioteca, que não tem tela).
+          // "shot" (captura real) ou "logo" (projeto sem tela própria a mostrar).
           media: p.media === "logo" ? "logo" : "shot",
+          // Placa do logotipo: clara por padrão, escura quando a marca tem
+          // partes brancas que desapareceriam na clara.
+          plate: p.plate === "dark" ? "dark" : "light",
           // Alternativa textual do print: o handoff pedia alt descritivo, que o
           // background-image do protótipo não permitia. Aqui o print é <img>.
           // Logotipo não é captura de tela — o alt tem que dizer o que é.
           shotAlt: (p.media === "logo" ? t.logoAltPrefix : t.altPrefix) + " " + loc.name,
           demoUrl: p.demoUrl || null,
-          codeUrl: p.codeUrl
+          // codeUrl null = código não público (trabalho de cliente). Mesma
+          // regra do demoUrl: a chave existe sempre, null é opt-out declarado.
+          codeUrl: p.codeUrl || null
         };
       });
       return {

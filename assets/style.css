@@ -505,6 +505,12 @@ body::after {
   padding: 18px;
 }
 
+/* Marca com partes brancas some na placa clara. Trocar o fundo é legítimo;
+   inverter ou tingir arte de terceiro, não. */
+.shot--logo-dark {
+  background: #16151a;
+}
+
 .shot--logo img {
   width: auto;
   height: auto;
