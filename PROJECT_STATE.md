@@ -70,6 +70,16 @@ Sem build, sem framework, sem dependência externa em runtime.
   SDK é coautoria.
 - **Sem overflow horizontal**, medido em 01/08/2026: `clientWidth` igual a
   `scrollWidth` a 485px, 669px e 1384px de layout.
+- **01/08/2026 — entrada do Gemini Video, em um grupo novo "MCP e skills para
+  agentes"** (6 grupos, 9 projetos). Card de logotipo com a marca do Gemini: dois
+  servidores MCP e um comando não têm tela para capturar. Conferido nos dois
+  idiomas em Chrome headless, local e depois na URL pública.
+  A intro foi reescrita nos dois idiomas outra vez: ela afirmava que **nenhum
+  dado sai do dispositivo**, e o Gemini Video envia o vídeo para a API do Google.
+  O fio condutor passou a ser "nada passa por servidor meu", que continua
+  verdadeiro para os nove, com a ressalva de que cada projeto declara se o
+  processamento é local ou se fala direto com um serviço usando a chave de quem
+  usa.
 
 ## Não validado
 
