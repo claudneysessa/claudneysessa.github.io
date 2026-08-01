@@ -494,6 +494,25 @@ body::after {
   display: block;
 }
 
+/* Biblioteca não tem tela. No lugar da captura entra a marca do projeto, que é
+   arte de terceiro e não pode ser cortada nem recolorida: placa clara para o
+   logotipo escuro ficar legível, "contain" para caber inteiro. */
+.shot--logo {
+  background: #f4f6f5;
+  box-shadow: none;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.shot--logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 .card-text {
   flex: 1 1 240px;
   min-width: min(100%, 240px);

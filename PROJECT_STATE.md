@@ -1,6 +1,6 @@
 # Estado atual — Site pessoal (claudneysessa.github.io)
 
-Última revisão: 2026-07-31.
+Última revisão: 2026-08-01.
 
 ## Identidade
 
@@ -27,6 +27,14 @@ Sem build, sem framework, sem dependência externa em runtime.
 
 - `assets/projects.js` — projetos e grupos. Único arquivo a editar para publicar
   um projeto novo. Contagens, intro e `ctaHint` derivam daqui.
+  `demoUrl: null` marca projeto sem demo por natureza — biblioteca ou ferramenta
+  local. A chave tem que existir: `null` é opt-out declarado, ausência é
+  esquecimento, e o verificador separa os dois casos. Nesses projetos não há
+  `demoLabel` e o card renderiza só o link de código.
+  `media` escolhe a mídia do card: `"shot"` (padrão, captura real, recortada com
+  `object-fit: cover`) ou `"logo"` (biblioteca, que não tem tela — placa clara
+  `.shot--logo` e `contain`, para a marca caber inteira e não ser recortada). O
+  `alt` acompanha: `altPrefix` para captura, `logoAltPrefix` para logotipo.
 - `assets/content.js` — textos de perfil, rótulos e links, em PT e EN; monta
   `PF_CONTENT` e deriva bios corridas, intro e contagens com singular/plural.
 - `assets/lang.js` — idioma: `?lang=` → `localStorage` → inglês.
@@ -34,12 +42,16 @@ Sem build, sem framework, sem dependência externa em runtime.
 
 ## Estado validado
 
-- `node .claude/skills/portfolio/scripts/check.mjs` aprovado: 5 projetos em 3
+- `node .claude/skills/portfolio/scripts/check.mjs` aprovado: 8 projetos em 5
   grupos, paridade PT/EN, prints presentes, ids conferidos nas duas páginas,
   nenhuma referência quebrada.
+- Verificador exercitado contra 5 casos que ele **deve** reprovar (`demoUrl` com
+  `"#"`, chave `demoUrl` ausente, `demoLabel` sem `demoUrl`, `codeUrl` vazia,
+  print inexistente no disco). Todos reprovaram: a folga para `null` não afrouxou
+  a validação.
 - Camada de dados executada em Node: contagens derivadas corretas, incluindo
   singular e plural.
-- As 10 URLs de demo e código verificadas com HTTP 200.
+- As 13 URLs de demo e código verificadas com HTTP 200.
 - Servidor local entregando as duas páginas e todos os assets com content-type
   correto.
 - Fonte JetBrains Mono self-hosted (31 KB, um arquivo para os dois pesos).
@@ -49,9 +61,23 @@ Sem build, sem framework, sem dependência externa em runtime.
   Monitor. O Monitor é alcançado pelo botão `▶ animated version` da barra, a
   sequência de boot roda e a página se comporta normalmente.
 
+- **01/08/2026 — entrada de SnakeAI, Local Token Monitor e PayGO SDK.** As duas
+  páginas conferidas nos dois idiomas em Chrome headless: 5 grupos na ordem
+  certa, mídia nova carregando, e os dois projetos sem demo mostrando só o link
+  de código. A intro e o `ctaHint` foram reescritos nos dois idiomas porque
+  "todos têm demonstração ao vivo" e "rodam no seu navegador" deixaram de ser
+  verdade com um projeto Python local; "projetos autorais" saiu porque o PayGO
+  SDK é coautoria.
+- **Sem overflow horizontal**, medido em 01/08/2026: `clientWidth` igual a
+  `scrollWidth` a 485px, 669px e 1384px de layout.
+
 ## Não validado
 
-- Responsividade nas três larguras exigidas pelo padrão da raiz.
+- Responsividade em largura de celular real. O Chrome headless não desce abaixo
+  de ~485px de layout, então `--window-size=390` produz um **recorte** de um
+  layout de 485, não um layout de 390 — captura assim engana, parece texto
+  cortado. Para valer, precisa de emulação de dispositivo via CDP ou de aparelho
+  real.
 - Comportamento em navegadores além do Chrome.
 
 ## Pendências

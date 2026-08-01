@@ -49,18 +49,19 @@
       ],
       linksTitle: "Onde me encontrar",
       portfolioTitle: "Portfólio",
-      introA: "{n} projetos autorais com um fio condutor: ",
-      introB: "a inferência roda no navegador de quem visita",
-      introC: ". Sem servidor de IA, sem conta, sem enviar dados para fora do dispositivo. Todos têm demonstração ao vivo e código aberto.",
+      introA: "{n} projetos com um fio condutor: ",
+      introB: "o processamento acontece na máquina de quem usa",
+      introC: ". Sem servidor meu no caminho, sem conta, sem dado saindo do dispositivo. Todos têm código aberto; a maioria roda direto no navegador, com demonstração ao vivo.",
       codeLabel: "codigo",
       ctaTitle: "Quer conversar sobre tecnologias, sistemas e IA aplicada?",
       ctaSub: "Respondo por e-mail e LinkedIn em até um dia útil.",
       ctaBtn: "Enviar e-mail",
       openBtn: "abrir_portfolio",
-      ctaHint: "{n} projetos que rodam no seu navegador",
+      ctaHint: "{n} projetos que rodam na sua máquina",
       countOne: "projeto",
       countMany: "projetos",
       altPrefix: "Captura de tela do projeto",
+      logoAltPrefix: "Logotipo do projeto",
       pageTitle:
         "claudney_sarti_sessa — Desenvolvedor sênior · .NET, Flutter e JavaScript · IA aplicada"
     },
@@ -96,18 +97,19 @@
       ],
       linksTitle: "Where to find me",
       portfolioTitle: "Portfolio",
-      introA: "{n} personal projects with one common thread: ",
-      introB: "inference runs in the visitor's own browser",
-      introC: ". No AI server, no account, no data leaving the device. All of them have a live demo and open source code.",
+      introA: "{n} projects with one common thread: ",
+      introB: "the processing happens on the user's own machine",
+      introC: ". No server of mine in the path, no account, no data leaving the device. All of them are open source; most run straight in the browser, with a live demo.",
       codeLabel: "code",
       ctaTitle: "Want to talk about technology, systems and applied AI?",
       ctaSub: "I reply by email and LinkedIn within one business day.",
       ctaBtn: "Send email",
       openBtn: "open_portfolio",
-      ctaHint: "{n} projects that run in your own browser",
+      ctaHint: "{n} projects that run on your own machine",
       countOne: "project",
       countMany: "projects",
       altPrefix: "Screenshot of the",
+      logoAltPrefix: "Logo of the",
       pageTitle:
         "claudney_sarti_sessa — Senior developer · .NET, Flutter, JavaScript · applied AI"
     }
@@ -141,13 +143,18 @@
           name: loc.name,
           desc: loc.desc,
           note: loc.note,
-          demoLabel: loc.demoLabel,
+          // demoUrl null = projeto sem demo por natureza (biblioteca, ferramenta
+          // local). Nesse caso não há rótulo de demo para renderizar.
+          demoLabel: loc.demoLabel || null,
           tags: p.tags[lang],
           shot: p.shot,
+          // "shot" (captura real) ou "logo" (biblioteca, que não tem tela).
+          media: p.media === "logo" ? "logo" : "shot",
           // Alternativa textual do print: o handoff pedia alt descritivo, que o
           // background-image do protótipo não permitia. Aqui o print é <img>.
-          shotAlt: t.altPrefix + " " + loc.name,
-          demoUrl: p.demoUrl,
+          // Logotipo não é captura de tela — o alt tem que dizer o que é.
+          shotAlt: (p.media === "logo" ? t.logoAltPrefix : t.altPrefix) + " " + loc.name,
+          demoUrl: p.demoUrl || null,
           codeUrl: p.codeUrl
         };
       });

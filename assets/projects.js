@@ -14,7 +14,10 @@
 
     "meu-projeto": {
       "shot": "./assets/shot-meu-projeto.png",
-      "demoUrl": "#",
+      "media": "shot",  // "shot" (padrão, captura real) ou "logo" (biblioteca,
+                        // que não tem tela): logo ganha placa clara e não é cortado
+      "demoUrl": "#",   // null quando não há demo (biblioteca, ferramenta local);
+                        // nesse caso apague "demoLabel" dos blocos pt/en
       "codeUrl": "#",
       "tags": {
         "pt": [".NET", "Integração"],
@@ -143,11 +146,73 @@ window.PF_PROJECTS = {
         "note": "An evolution of an academic recommender-system baseline.",
         "demoLabel": "demo"
       }
+    },
+    "snakeia": {
+      "shot": "./assets/shots/shot-snakeia.webp",
+      "demoUrl": "https://claudneysessa.github.io/snakeia/",
+      "codeUrl": "https://github.com/claudneysessa/snakeia",
+      "tags": {
+        "pt": ["TensorFlow.js", "Behavior cloning", "Web Worker", "Sem build"],
+        "en": ["TensorFlow.js", "Behavior cloning", "Web Worker", "No build"]
+      },
+      "pt": {
+        "name": "SnakeAI",
+        "desc": "Snake escrito do zero em JavaScript, com uma rede neural que aprende a jogar imitando as suas partidas. Você joga, cada decisão vira dado, a rede treina em segundos e assume o controle.",
+        "note": "A rede é treinada no seu navegador, não vem pronta: clique numa célula para mover a fruta e veja as três probabilidades mudarem antes de a cobra virar.",
+        "demoLabel": "jogar"
+      },
+      "en": {
+        "name": "SnakeAI",
+        "desc": "Snake written from scratch in JavaScript, plus a neural network that learns to play by imitating your own matches. You play, every decision becomes data, the network trains in seconds and takes the controls.",
+        "note": "The network is trained in your browser, not shipped pretrained: click a cell to move the fruit and watch the three probabilities change before the snake turns.",
+        "demoLabel": "play"
+      }
+    },
+    "local-token-monitor": {
+      "shot": "./assets/shots/shot-tokenmonitor.webp",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/local-token-monitor",
+      "tags": {
+        "pt": ["Python", "Só biblioteca padrão", "Leitura local", "Claude Code"],
+        "en": ["Python", "Standard library only", "Local-only", "Claude Code"]
+      },
+      "pt": {
+        "name": "Local Token Monitor",
+        "desc": "Painel que responde quando e em qual tarefa o consumo de tokens do Claude Code acontece, lendo os arquivos de sessão da própria máquina. Só biblioteca padrão: baixar um arquivo e rodar.",
+        "note": "Sem demonstração pública, e de propósito: o painel lê o histórico de quem executa, então uma instância hospedada não teria dado nenhum."
+      },
+      "en": {
+        "name": "Local Token Monitor",
+        "desc": "Dashboard that answers when and on which task your Claude Code token usage happens, by reading the session files on your own machine. Standard library only: download one file and run it.",
+        "note": "No public demo, by design: the dashboard reads the history of whoever runs it, so a hosted instance would have no data at all."
+      }
+    },
+    "paygo_sdk": {
+      "shot": "./assets/shots/logo-paygo.webp",
+      "media": "logo",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/paygo_sdk",
+      "tags": {
+        "pt": ["Flutter", "Dart", "Android Intent", "MIT"],
+        "en": ["Flutter", "Dart", "Android Intent", "MIT"]
+      },
+      "pt": {
+        "name": "PayGO SDK",
+        "desc": "Biblioteca Flutter que abstrai a comunicação por URI e Android Intent com o aplicativo PayGO Integrado. Quem integra trabalha com objetos e operações em Dart, em vez de montar cada mensagem do protocolo à mão.",
+        "note": "Coautoria com Daniel Oliveira Souza, em parceria com a PayGo — o único da lista que não é solo. Biblioteca não tem tela: no lugar do print, a marca do projeto."
+      },
+      "en": {
+        "name": "PayGO SDK",
+        "desc": "Flutter library that abstracts URI and Android Intent communication with the PayGO Integrado app. You work with Dart objects and operations instead of assembling each protocol message by hand.",
+        "note": "Co-authored with Daniel Oliveira Souza, in partnership with PayGo — the only one here that is not solo. A library has no screen: the project mark stands in for a screenshot."
+      }
     }
   },
   "groups": [
     { "id": "llm", "slugs": ["in-browser-ai-chat", "pocket-browser-ai"], "pt": "Modelos de linguagem no navegador", "en": "Language models in the browser" },
     { "id": "cv", "slugs": ["libras-lab", "cratebound"], "pt": "Visão computacional no navegador", "en": "Computer vision in the browser" },
-    { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" }
+    { "id": "learn", "slugs": ["snakeia"], "pt": "Redes que aprendem no navegador", "en": "Networks that learn in the browser" },
+    { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
+    { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" }
   ]
 };

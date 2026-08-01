@@ -30,8 +30,32 @@
     });
   }
 
+  function links(project, t) {
+    var out = [];
+    if (project.demoUrl) {
+      out.push(
+        el("a", {
+          href: project.demoUrl,
+          target: "_blank",
+          rel: "noopener",
+          text: "./" + project.demoLabel,
+        }),
+      );
+    }
+    out.push(
+      el("a", {
+        href: project.codeUrl,
+        target: "_blank",
+        rel: "noopener",
+        text: "./" + t.codeLabel,
+      }),
+    );
+    return out;
+  }
+
   function card(project, t) {
-    var media = el("div", { class: "shot" }, [
+    // Logotipo de biblioteca não é captura: ganha placa clara e não é cortado.
+    var media = el("div", { class: project.media === "logo" ? "shot shot--logo" : "shot" }, [
       el("img", {
         src: project.shot,
         alt: project.shotAlt,
@@ -51,20 +75,10 @@
         }),
       ),
       el("p", { class: "note", text: "// " + project.note }),
-      el("div", { class: "card-links" }, [
-        el("a", {
-          href: project.demoUrl,
-          target: "_blank",
-          rel: "noopener",
-          text: "./" + project.demoLabel,
-        }),
-        el("a", {
-          href: project.codeUrl,
-          target: "_blank",
-          rel: "noopener",
-          text: "./" + t.codeLabel,
-        }),
-      ]),
+      // Nem todo projeto tem demo: biblioteca e ferramenta local não têm onde
+      // rodar no navegador. Quando demoUrl é null o card mostra só o código —
+      // link falso ou apontando para o próprio repositório seria pior.
+      el("div", { class: "card-links" }, links(project, t)),
     ]);
 
     return el("article", { class: "card" }, [
