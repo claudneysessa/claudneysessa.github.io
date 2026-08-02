@@ -227,6 +227,27 @@ window.PF_PROJECTS = {
         "note": "No demo: two MCP servers and a command, with no screen to capture — the Gemini mark stands in for a screenshot. It is also the only project here that depends on an external service: the video is uploaded to Google's API with your own key, and the README says so in its first section."
       }
     },
+    "ctx404": {
+      "shot": "./assets/shots/shot-ctx404.webp",
+      "demoUrl": "https://claudneysessa.github.io/ctx404/",
+      "codeUrl": "https://github.com/claudneysessa/ctx404",
+      "tags": {
+        "pt": ["Claude Code", "Skill", "Python", "Git", "Open Source"],
+        "en": ["Claude Code", "Skill", "Python", "Git", "Open Source"]
+      },
+      "pt": {
+        "name": "CTX404",
+        "desc": "Skill open source que prepara repositórios novos com governança local e um sistema de contexto compacto, indexado e versionável, projetado para sobreviver à troca de chats e máquinas.",
+        "note": "Beta público: orienta a delegação de tarefas triviais para modelos mais baratos, mas não promete roteamento perfeito nem economia automática de tokens. Sem mágica. Ainda.",
+        "demoLabel": "entenda"
+      },
+      "en": {
+        "name": "CTX404",
+        "desc": "Open-source skill that bootstraps new repositories with project-local governance and a compact, indexed, versionable context system designed to survive changing chats and machines.",
+        "note": "Public beta: it guides delegation of trivial work to cheaper models, but does not promise perfect routing or automatic token savings. No magic. Yet.",
+        "demoLabel": "explore"
+      }
+    },
     "medina-trainer": {
       "shot": "./assets/shots/logo-medina.webp",
       "media": "logo",
@@ -257,9 +278,10 @@ window.PF_PROJECTS = {
     { "id": "learn", "slugs": ["snakeia"], "pt": "Redes que aprendem no navegador", "en": "Networks that learn in the browser" },
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
     { "id": "mcp", "slugs": ["mcp-gemini-video"], "pt": "MCP e skills para agentes", "en": "MCP servers and agent skills" },
+    { "id": "ai-skills", "slugs": ["ctx404"], "pt": "Skills de IA", "en": "AI skills" },
     { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
     { "id": "client", "slugs": ["medina-trainer"], "pt": "Trabalho para clientes", "en": "Client work" },
-    { "id": "oss", "slugs": ["local-token-monitor"], "pt": "Open Source", "en": "Open Source" },
+    { "id": "oss", "slugs": ["local-token-monitor", "ctx404"], "pt": "Open Source", "en": "Open Source" },
     { "id": "contrib", "slugs": ["paygo_sdk"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]
   /* Um projeto pode aparecer em mais de um grupo — os grupos são recortes de

@@ -1,6 +1,6 @@
 # Estado atual — Site pessoal (claudneysessa.github.io)
 
-Última revisão: 2026-08-01.
+Última revisão: 2026-08-02.
 
 ## Identidade
 
@@ -93,6 +93,12 @@ Sem build, sem framework, sem dependência externa em runtime.
   passa por servidor meu" não sobrevivem a um sistema de cliente hospedado. A
   solução foi estreitar o escopo — o fio condutor passa a valer para os
   experimentos, e a exceção é nomeada na própria intro.
+
+- **02/08/2026 — entrada do CTX404** (11 projetos, 10 grupos). Categoria nova
+  `Skills de IA` / `AI skills`, com presença adicional em `Open Source`.
+  O card usa uma captura real da landing, mantém paridade PT/EN e declara com
+  honestidade que a orientação de delegação não garante roteamento perfeito nem
+  economia automática de tokens.
 
 ## Não validado
 
