@@ -84,6 +84,27 @@ window.PF_PROJECTS = {
         "demoLabel": "demo"
       }
     },
+    "swapi-ia": {
+      "shot": "./assets/shots/shot-swapi.webp",
+      "demoUrl": "https://claudneysessa.github.io/swapi-ia/",
+      "codeUrl": "https://github.com/claudneysessa/swapi-ia",
+      "tags": {
+        "pt": ["WebLLM", "WebGPU", "SWAPI", "Sem build"],
+        "en": ["WebLLM", "WebGPU", "SWAPI", "No build"]
+      },
+      "pt": {
+        "name": "swapi-ia",
+        "desc": "O mesmo modelo da IA de Bolso, agora com uma ferramenta: um roteador determinístico consulta a SWAPI, o código desenha os valores exatos e o modelo só escreve a frase em volta.",
+        "note": "Quando a API não guarda a relação pedida, ele recusa e diz o que existe no lugar.",
+        "demoLabel": "demo"
+      },
+      "en": {
+        "name": "swapi-ia",
+        "desc": "The same model as IA de Bolso, now with a tool: a deterministic router queries SWAPI, the code renders the exact values, and the model only writes the sentence around them.",
+        "note": "When the API does not hold the requested relation, it refuses and says what exists instead.",
+        "demoLabel": "demo"
+      }
+    },
     "libras-lab": {
       "shot": "./assets/shots/shot-libras.webp",
       "demoUrl": "https://claudneysessa.github.io/libras-lab/",
@@ -273,7 +294,7 @@ window.PF_PROJECTS = {
     }
   },
   "groups": [
-    { "id": "llm", "slugs": ["in-browser-ai-chat", "pocket-browser-ai"], "pt": "Modelos de linguagem no navegador", "en": "Language models in the browser" },
+    { "id": "llm", "slugs": ["in-browser-ai-chat", "pocket-browser-ai", "swapi-ia"], "pt": "Modelos de linguagem no navegador", "en": "Language models in the browser" },
     { "id": "cv", "slugs": ["libras-lab", "cratebound"], "pt": "Visão computacional no navegador", "en": "Computer vision in the browser" },
     { "id": "learn", "slugs": ["snakeia"], "pt": "Redes que aprendem no navegador", "en": "Networks that learn in the browser" },
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
