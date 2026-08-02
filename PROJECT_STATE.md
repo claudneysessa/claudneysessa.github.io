@@ -100,6 +100,14 @@ Sem build, sem framework, sem dependência externa em runtime.
   honestidade que a orientação de delegação não garante roteamento perfeito nem
   economia automática de tokens.
 
+- **02/08/2026 — entrada do swapi-ia** (12 projetos, 10 grupos). Terceiro card do
+  grupo `Modelos de linguagem no navegador`, depois do IAí? e da IA de Bolso: o
+  mesmo modelo, agora com uma ferramenta. Captura real da abertura, feita na URL
+  pública e recortada para tirar abas, favoritos e barra de tarefas. A intro **não**
+  mudou: processamento no dispositivo, código aberto, demo ao vivo e conversa
+  direta com um serviço público — nada que o fio condutor atual não cubra. Conferido
+  nos dois idiomas nas duas páginas, local e depois na URL pública.
+
 ## Não validado
 
 - Responsividade em largura de celular real. O Chrome headless não desce abaixo
