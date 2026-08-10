@@ -194,18 +194,18 @@ window.PF_PROJECTS = {
       "demoUrl": null,
       "codeUrl": "https://github.com/claudneysessa/local-token-monitor",
       "tags": {
-        "pt": ["Python", "Só biblioteca padrão", "Leitura local", "Claude Code"],
-        "en": ["Python", "Standard library only", "Local-only", "Claude Code"]
+        "pt": ["Python", "Só biblioteca padrão", "Leitura local", "Docker", "Claude Code"],
+        "en": ["Python", "Standard library only", "Local-only", "Docker", "Claude Code"]
       },
       "pt": {
         "name": "Local Token Monitor",
-        "desc": "Painel que responde quando e em qual tarefa o consumo de tokens do Claude Code acontece, lendo os arquivos de sessão da própria máquina. Só biblioteca padrão: baixar um arquivo e rodar.",
-        "note": "Sem demonstração pública, e de propósito: o painel lê o histórico de quem executa, então uma instância hospedada não teria dado nenhum."
+        "desc": "Painel que responde quando e em qual tarefa o consumo de tokens do Claude Code acontece, lendo os arquivos de sessão da própria máquina. Duas telas na mesma porta: um HUD escuro de cockpit que atualiza a cada dois segundos, e o painel de trabalho com calendário do mês e atribuição por tarefa pelo título real da sessão. Só biblioteca padrão: baixar um arquivo e rodar, ou subir em Docker e acompanhar do tablet pelo IP da rede local.",
+        "note": "Sem demonstração pública, e de propósito: o painel lê o histórico de quem executa, então uma instância hospedada não teria dado nenhum. Nada sai do disco — sem proxy, sem chave de API, sem conta, sem uma única requisição de rede."
       },
       "en": {
         "name": "Local Token Monitor",
-        "desc": "Dashboard that answers when and on which task your Claude Code token usage happens, by reading the session files on your own machine. Standard library only: download one file and run it.",
-        "note": "No public demo, by design: the dashboard reads the history of whoever runs it, so a hosted instance would have no data at all."
+        "desc": "Dashboard that answers when and on which task your Claude Code token usage happens, by reading the session files on your own machine. Two screens on the same port: a dark cockpit HUD that refreshes every two seconds, and the working dashboard with a monthly calendar and per-task attribution by the session's real title. Standard library only: download one file and run it, or bring it up in Docker and watch from a tablet over your local network.",
+        "note": "No public demo, by design: the dashboard reads the history of whoever runs it, so a hosted instance would have no data at all. Nothing leaves your disk — no proxy, no API key, no account, not a single network request."
       }
     },
     "paygo_sdk": {
