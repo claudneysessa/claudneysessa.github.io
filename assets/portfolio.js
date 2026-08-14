@@ -181,6 +181,9 @@
 
     var animated = document.getElementById("animated-link");
     animated.textContent = "▶ " + t.animatedBtn;
+
+    var studio = document.getElementById("studio-link");
+    if (studio) studio.textContent = t.studioBtn;
     animated.setAttribute("href", "./monitor.html?lang=" + window.PF_LANG.get());
   }
 

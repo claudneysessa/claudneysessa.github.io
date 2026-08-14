@@ -5,40 +5,50 @@
    não lembra nada: ou o fato está escrito abaixo, ou ele não existe para a
    página, e o roteador recusa antes de o modelo rodar.
 
-   Esta versão é PROVISÓRIA e contém apenas o que já é público no perfil do
-   GitHub (github.com/claudneysessa). Nada foi inventado, deduzido ou
-   completado. Quando o arquivo definitivo chegar, ele substitui os blocos
-   abaixo — o formato é o mesmo e nada mais precisa mudar.
+   ORIGEM: perfil escrito pelo próprio Claudney em 14/08/2026, entregue como
+   "Claudney Sarti Sessa — perfil para IA local". O conteúdo dos blocos é o
+   texto dele, quebrado por assunto para o roteador conseguir encontrar o
+   pedaço certo. Nada foi acrescentado.
+
+   NOTA DE DECISÃO — ERP e fiscal voltam a ser públicos.
+   Em 31/07/2026 ERP, área fiscal brasileira e documentos eletrônicos foram
+   retirados de todas as superfícies públicas por discrição profissional. O
+   perfil entregue em 14/08/2026 os traz de volta, nomeando NF-e, NFS-e, CT-e,
+   MDF-e, SPED e SINTEGRA, e Claudney confirmou a decisão. O invariante antigo
+   fica revogado para esta base; o que continua valendo é a linha seguinte, que
+   é dele: nada sobre informação interna de empresa, cliente ou sistema
+   proprietário.
 
    FORMATO DE UM BLOCO
 
      {
-       id: "identificador-estavel",   // não repetir; usado em log e teste
-       topic: "assunto",              // agrupador legível
-       pt: { title, text },           // o que o assistente pode dizer, em PT
-       en: { title, text },           // idem, em inglês
-       keywords: {                    // o que faz a pergunta cair neste bloco
-         pt: ["palavra", "outra"],
-         en: ["word", "other"]
-       }
+       id: "identificador-estavel",
+       topic: "assunto",
+       pt: { title, text },
+       en: { title, text },
+       keywords: { pt: [...], en: [...] }
      }
 
-   REGRAS QUE VALEM PARA QUEM ESCREVER ESTE ARQUIVO
+   REGRAS PARA QUEM EDITAR
 
-   1. Um bloco = um assunto. Bloco grande demais faz o assistente responder
-      coisa que não foi perguntada; bloco pequeno demais nunca é encontrado.
-   2. O texto do bloco é o teto do que pode ser dito. O modelo reescreve a
-      frase, mas não pode acrescentar fato nenhum.
+   1. Um bloco = um assunto. Bloco grande faz o assistente responder o que não
+      foi perguntado; bloco pequeno demais nunca é encontrado.
+   2. O texto do bloco é o teto do que pode ser dito.
    3. Nada de número, empresa, data ou cliente que não esteja escrito aqui.
-   4. Paridade PT/EN obrigatória. Uma versão nunca é resumo da outra.
-   5. Se um fato não puder aparecer na tela, ele não entra neste arquivo.
-      Não existe "contexto só para o modelo se orientar" — tudo aqui é público.
+   4. Paridade PT/EN obrigatória.
+   5. Tudo aqui é público. Não existe "contexto só para o modelo se orientar".
    ========================================================================== */
 
 window.PF_KNOWLEDGE = {
-  /* Origem declarada, para quem for auditar de onde veio cada afirmação. */
-  source: "github.com/claudneysessa — perfil público, lido em 2026-08-14",
-  provisional: true,
+  source: "Perfil para IA local, escrito por Claudney Sarti Sessa em 2026-08-14",
+  provisional: false,
+
+  /* A frase exata que o próprio perfil manda usar quando a resposta não está
+     na base. O roteador e o prompt usam esta string, e não uma paráfrase. */
+  fallbackLine: {
+    pt: "Essa informação não está neste perfil.",
+    en: "That information is not in this profile."
+  },
 
   blocks: [
     {
@@ -47,129 +57,269 @@ window.PF_KNOWLEDGE = {
       pt: {
         title: "Quem é",
         text:
-          "Claudney Sarti Sessa é desenvolvedor sênior, bacharel em Sistemas de Informação, " +
-          "com mais de 20 anos de experiência construindo sistemas corporativos — do tipo que " +
-          "roda em produção, com gente dependendo deles todos os dias."
+          "Claudney Sarti Sessa é Analista de Sistemas Sênior e trabalha com tecnologia desde 2000. " +
+          "É formado em Sistemas de Informação, tem pós-graduações em Engenharia de Software e em " +
+          "Ciência de Dados e Big Data Analytics, e atualmente estuda Engenharia de Software com IA Aplicada."
       },
       en: {
         title: "Who he is",
         text:
-          "Claudney Sarti Sessa is a senior developer with a Bachelor's in Information Systems " +
-          "and over 20 years of experience building enterprise systems — the kind that runs in " +
-          "production, with people depending on them every day."
+          "Claudney Sarti Sessa is a Senior Systems Analyst and has worked in technology since 2000. " +
+          "He holds a degree in Information Systems, postgraduate degrees in Software Engineering and in " +
+          "Data Science and Big Data Analytics, and is currently studying Software Engineering with Applied AI."
       },
       keywords: {
-        pt: ["quem", "quem e ele", "sobre", "apresenta", "experiencia", "anos", "senior", "desenvolvedor", "carreira", "bacharel"],
-        en: ["who", "about", "introduce", "experience", "years", "senior", "developer", "career", "bachelor"]
+        pt: ["quem", "sobre", "apresenta", "experiencia", "anos", "desde quando", "senior", "analista", "formado", "carreira", "idade profissional"],
+        en: ["who", "about", "introduce", "experience", "years", "since when", "senior", "analyst", "degree", "career"]
       }
     },
 
     {
-      id: "foco",
-      topic: "atuacao",
+      id: "perfil-pessoal-profissional",
+      topic: "identidade",
       pt: {
-        title: "No que atua",
+        title: "Como ele se descreve",
         text:
-          "O foco dele é .NET, Flutter e JavaScript, e ele atua com IA aplicada e engenharia " +
-          "de prompts."
+          "Ele se considera apaixonado por tecnologia, curioso, autodidata e persistente. Gosta de " +
+          "aprender, construir projetos e transformar problemas em soluções práticas."
       },
       en: {
-        title: "What he focuses on",
+        title: "How he describes himself",
         text:
-          "He focuses on .NET, Flutter and JavaScript, and works with applied AI and prompt " +
-          "engineering."
+          "He describes himself as passionate about technology, curious, self-taught and persistent. " +
+          "He likes learning, building projects and turning problems into practical solutions."
       },
       keywords: {
-        pt: ["foco", "atua", "trabalha com", "especialidade", "ia aplicada", "engenharia de prompts", "prompt"],
-        en: ["focus", "works with", "specialty", "applied ai", "prompt engineering", "prompt"]
+        pt: ["como e ele", "personalidade", "perfil", "jeito", "autodidata", "curioso", "persistente", "apaixonado"],
+        en: ["what is he like", "personality", "profile", "self-taught", "curious", "persistent", "passionate"]
       }
     },
 
     {
-      id: "stack",
+      id: "atuacao",
+      topic: "trabalho",
+      pt: {
+        title: "Com o que ele trabalha",
+        text:
+          "A principal experiência profissional dele está no desenvolvimento e na manutenção de sistemas " +
+          "empresariais. Trabalha com análise de requisitos, regras de negócio, bancos de dados, " +
+          "integrações, aplicações desktop e aplicativos móveis."
+      },
+      en: {
+        title: "What he works with",
+        text:
+          "His main professional experience is in developing and maintaining enterprise systems. He works " +
+          "with requirements analysis, business rules, databases, integrations, desktop applications and " +
+          "mobile apps."
+      },
+      keywords: {
+        pt: ["faz o que", "atuacao", "sistemas empresariais", "requisitos", "regras de negocio", "integracao", "desktop", "mobile", "banco de dados"],
+        en: ["what does he do", "enterprise systems", "requirements", "business rules", "integration", "desktop", "mobile", "database"]
+      }
+    },
+
+    {
+      id: "erp-fiscal",
+      topic: "trabalho",
+      pt: {
+        title: "ERP e sistemas fiscais",
+        text:
+          "Ele tem grande experiência com ERP e sistemas fiscais brasileiros, incluindo NF-e, NFS-e, " +
+          "CT-e, MDF-e, SPED e SINTEGRA."
+      },
+      en: {
+        title: "ERP and tax systems",
+        text:
+          "He has extensive experience with ERP and Brazilian tax systems, including NF-e, NFS-e, CT-e, " +
+          "MDF-e, SPED and SINTEGRA."
+      },
+      keywords: {
+        pt: ["erp", "fiscal", "nota fiscal", "nfe", "nf-e", "nfse", "cte", "ct-e", "mdfe", "mdf-e", "sped", "sintegra", "tributario", "documento eletronico"],
+        en: ["erp", "tax", "invoice", "e-invoicing", "nfe", "nf-e", "sped", "sintegra", "fiscal", "electronic document"]
+      }
+    },
+
+    {
+      id: "stack-principal",
       topic: "tecnologias",
       pt: {
-        title: "Stack",
-        text:
-          "Delphi em sistemas legados, .NET em sistemas corporativos, Dart e Flutter no mobile, " +
-          "e JavaScript e TypeScript na web — que é onde vivem os experimentos de IA."
+        title: "Tecnologia principal",
+        text: "Delphi e Object Pascal são as tecnologias com as quais ele tem mais experiência."
       },
       en: {
-        title: "Stack",
-        text:
-          "Delphi for legacy systems, .NET for enterprise systems, Dart and Flutter for mobile, " +
-          "and JavaScript and TypeScript on the web — which is where the AI experiments live."
+        title: "Main technology",
+        text: "Delphi and Object Pascal are the technologies he has the most experience with."
       },
       keywords: {
-        pt: ["stack", "tecnologia", "linguagem", "linguagens", "delphi", "dotnet", ".net", "flutter", "dart", "javascript", "typescript", "mobile", "web", "programa em"],
-        en: ["stack", "technology", "language", "languages", "delphi", "dotnet", ".net", "flutter", "dart", "javascript", "typescript", "mobile", "web", "programs in"]
+        pt: ["delphi", "object pascal", "pascal", "tecnologia principal", "principal tecnologia", "tecnologia que mais", "mais experiencia", "principal"],
+        en: ["delphi", "object pascal", "pascal", "main technology", "primary technology", "most experience", "main"]
       }
     },
 
     {
-      id: "repositorios-privados",
+      id: "stack-demais",
       topic: "tecnologias",
       pt: {
-        title: "Por que o GitHub não mostra essa experiência",
+        title: "Outras tecnologias",
         text:
-          "A maior parte da experiência dele está em repositórios corporativos privados, então " +
-          "não aparece nas estatísticas de linguagem do perfil do GitHub."
+          "Ao longo da carreira e dos projetos dele também usou Flutter e Dart, .NET e C#, JavaScript e " +
+          "TypeScript, Python, HTML e CSS, Node.js e PHP, os bancos SQL Anywhere, SQL Server, Oracle, " +
+          "PostgreSQL e MySQL, além de Docker, Git e GitHub."
       },
       en: {
-        title: "Why GitHub does not show that experience",
+        title: "Other technologies",
         text:
-          "Most of that experience lives in private corporate repositories, so it does not show " +
-          "up in the language statistics of his GitHub profile."
+          "Across his career and projects he has also used Flutter and Dart, .NET and C#, JavaScript and " +
+          "TypeScript, Python, HTML and CSS, Node.js and PHP, the databases SQL Anywhere, SQL Server, " +
+          "Oracle, PostgreSQL and MySQL, plus Docker, Git and GitHub."
       },
       keywords: {
-        pt: ["github", "estatistica", "linguagem do perfil", "privado", "repositorio privado", "por que nao aparece"],
-        en: ["github", "statistics", "profile language", "private", "private repository", "why not show"]
+        pt: ["stack", "tecnologias", "linguagens", "flutter", "dart", "dotnet", ".net", "csharp", "javascript", "typescript", "python", "html", "css", "node", "php", "sql", "oracle", "postgres", "mysql", "docker", "git", "github", "banco"],
+        en: ["stack", "technologies", "languages", "flutter", "dart", "dotnet", ".net", "csharp", "javascript", "typescript", "python", "html", "css", "node", "php", "sql", "oracle", "postgres", "mysql", "docker", "git", "github", "database"]
       }
     },
 
     {
-      id: "formacao",
-      topic: "formacao",
+      id: "estudos-ia",
+      topic: "tecnologias",
       pt: {
-        title: "Formação",
+        title: "O que ele estuda em IA",
         text:
-          "Pós-graduação em Engenharia de Software com IA Aplicada, em andamento; pós-graduação " +
-          "em Engenharia de Software; pós-graduação em Big Data e Analytics; e bacharelado em " +
-          "Sistemas de Informação pela FAESA."
+          "Ele estuda inteligência artificial aplicada, modelos de linguagem locais, RAG, MCP, agentes, " +
+          "WebLLM, WebGPU e TensorFlow.js."
       },
       en: {
-        title: "Education",
+        title: "What he studies in AI",
         text:
-          "Postgraduate in Software Engineering with Applied AI, in progress; postgraduate in " +
-          "Software Engineering; postgraduate in Big Data and Analytics; and a BSc in " +
-          "Information Systems from FAESA."
+          "He studies applied artificial intelligence, local language models, RAG, MCP, agents, WebLLM, " +
+          "WebGPU and TensorFlow.js."
       },
       keywords: {
-        pt: ["formacao", "estudou", "faculdade", "pos", "pos-graduacao", "graduacao", "curso", "faesa", "big data", "analytics", "engenharia de software"],
-        en: ["education", "studied", "university", "postgraduate", "degree", "course", "faesa", "big data", "analytics", "software engineering"]
+        pt: ["estuda", "ia", "inteligencia artificial", "rag", "mcp", "agentes", "webllm", "webgpu", "tensorflow", "modelo local", "llm"],
+        en: ["studies", "ai", "artificial intelligence", "rag", "mcp", "agents", "webllm", "webgpu", "tensorflow", "local model", "llm"]
       }
     },
 
     {
-      id: "portfolio",
+      id: "como-usa-ia",
+      topic: "ia",
+      pt: {
+        title: "Como ele usa IA",
+        text:
+          "Ele usa a IA como apoio para estudar, programar, documentar, analisar problemas e experimentar " +
+          "novas tecnologias. Para ele, a IA acelera o trabalho, mas a revisão e a responsabilidade " +
+          "continuam sendo humanas. Uma frase que resume a visão dele: “Experiência não perde valor com a " +
+          "IA — ela se multiplica.”"
+      },
+      en: {
+        title: "How he uses AI",
+        text:
+          "He uses AI as support for studying, programming, documenting, analysing problems and trying out " +
+          "new technologies. To him, AI speeds the work up, but review and responsibility remain human. A " +
+          "sentence that sums up his view: “Experience does not lose value with AI — it multiplies.”"
+      },
+      keywords: {
+        pt: ["como usa ia", "usa ia", "para que serve a ia", "visao sobre ia", "opiniao sobre ia", "acha da ia", "substituir", "responsabilidade"],
+        en: ["how does he use ai", "uses ai", "view on ai", "opinion on ai", "think about ai", "replace", "responsibility"]
+      }
+    },
+
+    {
+      id: "ia-como-fonte",
+      topic: "ia",
+      pt: {
+        title: "IA como fonte de fatos",
+        text:
+          "Ele acredita que um modelo de linguagem não deve ser tratado automaticamente como fonte de " +
+          "fatos. Quando possível, prefere que a IA consulte informações verificáveis antes de responder."
+      },
+      en: {
+        title: "AI as a source of facts",
+        text:
+          "He believes a language model should not automatically be treated as a source of facts. When " +
+          "possible, he prefers that the AI look up verifiable information before answering."
+      },
+      keywords: {
+        pt: ["fonte de fatos", "alucina", "confiar na ia", "verificavel", "consultar", "inventar"],
+        en: ["source of facts", "hallucinate", "trust ai", "verifiable", "look up", "make up"]
+      }
+    },
+
+    {
+      id: "projetos",
       topic: "projetos",
       pt: {
-        title: "Portfólio",
+        title: "Projetos",
         text:
-          "Os projetos pessoais dele ficam em claudneysessa.github.io, que é o único lugar onde " +
-          "a lista vive — assim ela nunca discorda de si mesma. Cada projeto declara no próprio " +
-          "card se tem demonstração ao vivo e se o código é aberto."
+          "Ele mantém projetos autorais, acadêmicos e experimentais no GitHub. Entre eles: SWAPI IA, uma " +
+          "demonstração de IA que responde sobre Star Wars consultando dados reais; In-Browser AI Chat, " +
+          "chat com modelo de linguagem executado localmente no navegador; Pocket Browser AI, experimento " +
+          "compacto de IA no navegador; SnakeIA, jogo em que uma rede neural aprende observando as partidas " +
+          "do usuário; Libras Lab, experimento educacional com classificação do alfabeto manual de Libras; " +
+          "Cratebound, puzzle controlado por gestos no navegador; VincuPet, recomendador de compatibilidade " +
+          "entre famílias e pets; Local Token Monitor, ferramenta local para visualizar o consumo de tokens; " +
+          "CTX404, projeto para organizar e preservar o contexto técnico de repositórios; e PayGO SDK, " +
+          "integração Flutter com o PayGO Integrado."
       },
       en: {
-        title: "Portfolio",
+        title: "Projects",
         text:
-          "His personal projects live at claudneysessa.github.io, the single place where the " +
-          "list exists, so it never disagrees with itself. Each project states on its own card " +
-          "whether it has a live demo and whether the code is open."
+          "He keeps personal, academic and experimental projects on GitHub. Among them: SWAPI IA, an AI demo " +
+          "that answers Star Wars questions by querying real data; In-Browser AI Chat, a chat with a language " +
+          "model running locally in the browser; Pocket Browser AI, a compact in-browser AI experiment; " +
+          "SnakeIA, a game where a neural network learns by watching the player; Libras Lab, an educational " +
+          "experiment classifying the Libras manual alphabet; Cratebound, a browser puzzle controlled by " +
+          "gestures; VincuPet, a compatibility recommender between families and pets; Local Token Monitor, a " +
+          "local tool for seeing token usage; CTX404, a project for organising and preserving the technical " +
+          "context of repositories; and PayGO SDK, a Flutter integration with PayGO Integrado."
       },
       keywords: {
-        pt: ["portfolio", "projetos", "site", "pagina", "onde ver", "trabalhos", "demonstracao", "demo"],
-        en: ["portfolio", "projects", "site", "page", "where to see", "work", "demo", "live"]
+        pt: ["projetos", "portfolio", "github", "criou", "fez", "swapi", "snakeia", "libras", "cratebound", "vincupet", "token monitor", "ctx404", "paygo", "pocket", "in-browser"],
+        en: ["projects", "portfolio", "github", "created", "built", "swapi", "snakeia", "libras", "cratebound", "vincupet", "token monitor", "ctx404", "paygo", "pocket", "in-browser"]
+      }
+    },
+
+    {
+      id: "natureza-dos-projetos",
+      topic: "projetos",
+      pt: {
+        title: "O que os projetos são",
+        text:
+          "Alguns desses projetos são estudos ou provas de conceito. Eles demonstram aprendizado e " +
+          "experimentação, não necessariamente produtos comerciais."
+      },
+      en: {
+        title: "What the projects are",
+        text:
+          "Some of these projects are studies or proofs of concept. They show learning and experimentation, " +
+          "not necessarily commercial products."
+      },
+      keywords: {
+        pt: ["produto", "comercial", "prova de conceito", "estudo", "experimento", "sao profissionais"],
+        en: ["product", "commercial", "proof of concept", "study", "experiment", "are they professional"]
+      }
+    },
+
+    {
+      id: "gostos",
+      topic: "interesses",
+      pt: {
+        title: "Do que ele gosta",
+        text:
+          "Ele gosta de tecnologia, leitura, videogames, skate e música. Também gosta de Star Wars, Indiana " +
+          "Jones, Harry Potter, Marvel, DC e animes. O gosto musical inclui música clássica, psytrance e " +
+          "heavy metal. Esses interesses às vezes viram temas para os experimentos técnicos dele."
+      },
+      en: {
+        title: "What he likes",
+        text:
+          "He likes technology, reading, video games, skateboarding and music. He is also into Star Wars, " +
+          "Indiana Jones, Harry Potter, Marvel, DC and anime. His taste in music includes classical, " +
+          "psytrance and heavy metal. These interests sometimes become themes for his technical experiments."
+      },
+      keywords: {
+        pt: ["gosta", "hobby", "hobbies", "musica", "filme", "filmes", "serie", "games", "videogame", "skate", "star wars", "marvel", "anime", "leitura", "interesses"],
+        en: ["likes", "hobby", "hobbies", "music", "movie", "movies", "series", "games", "video games", "skate", "star wars", "marvel", "anime", "reading", "interests"]
       }
     },
 
@@ -177,22 +327,22 @@ window.PF_KNOWLEDGE = {
       id: "contato",
       topic: "contato",
       pt: {
-        title: "Contato",
+        title: "Onde conhecer o trabalho dele",
         text:
-          "Por e-mail em claudneysartisessa@gmail.com, no LinkedIn em linkedin.com/in/claudneysessa " +
-          "ou no Medium em medium.com/@claudneysartisessa."
+          "No GitHub em github.com/claudneysessa, no LinkedIn em linkedin.com/in/claudneysessa e no " +
+          "portfólio em claudneysessa.github.io. Para contato profissional, o caminho é o LinkedIn, o " +
+          "GitHub ou o portfólio."
       },
       en: {
-        title: "Contact",
+        title: "Where to see his work",
         text:
-          "By email at claudneysartisessa@gmail.com, on LinkedIn at linkedin.com/in/claudneysessa, " +
-          "or on Medium at medium.com/@claudneysartisessa."
+          "On GitHub at github.com/claudneysessa, on LinkedIn at linkedin.com/in/claudneysessa and on his " +
+          "portfolio at claudneysessa.github.io. For professional contact, the way in is LinkedIn, GitHub " +
+          "or the portfolio."
       },
       keywords: {
-        pt: ["contato", "contatar", "email", "e-mail", "gmail", "falar", "falo", "fala", "conversar",
-             "chamar", "linkedin", "medium", "redes", "encontrar", "encontro", "procurar"],
-        en: ["contact", "email", "e-mail", "gmail", "reach", "talk", "speak", "hire", "linkedin",
-             "medium", "social", "find", "get in touch"]
+        pt: ["contato", "contatar", "falar", "falo", "conversar", "chamar", "linkedin", "github", "portfolio", "site", "onde ver", "encontrar", "trabalho dele"],
+        en: ["contact", "reach", "talk", "speak", "hire", "linkedin", "github", "portfolio", "site", "where to see", "find", "his work"]
       }
     }
   ],
@@ -200,31 +350,29 @@ window.PF_KNOWLEDGE = {
   /* ------------------------------------------------------------------------
      O QUE ESTA BASE NÃO RESPONDE
 
-     Cada entrada casa um tipo de pergunta que o arquivo não cobre e devolve um
-     motivo específico mais o que existe no lugar. Isso não é firula: "não sei"
-     genérico faz o visitante achar que a página quebrou, e um modelo de 0,5B
-     solto numa pergunta dessas inventa com a maior naturalidade.
+     As quatro primeiras entradas são as próprias regras do perfil entregue por
+     Claudney: nada de dado pessoal, família, salário, saúde, política, religião
+     ou assunto jurídico, e nada de informação interna de empresa, cliente ou
+     sistema proprietário.
 
-     Quando o arquivo definitivo chegar, entradas daqui podem virar blocos de
-     conhecimento — é só mover.
+     Cada uma devolve um motivo específico e o que existe no lugar. "Não sei"
+     genérico faz o visitante achar que a página quebrou, e um modelo de 0,5B
+     solto numa pergunta dessas inventa com naturalidade.
      ------------------------------------------------------------------------ */
   outOfScope: [
-    /* Atenção ao escrever padrão aqui: radical truncado NÃO pode terminar em
-       \b. "casad\b" nunca casa com "casado", porque o \b exige que o próximo
-       caractere não seja letra. Use \w* depois do radical. */
     {
-      id: "empregador",
+      id: "interno-de-empresa",
       match: {
-        pt: /\b(onde\s+(ele\s+)?trabalha|empresa\w*|empregador\w*|empregad\w*|contratad\w*|patr[aã]o|firma|emprego\s+atual)/i,
-        en: /\b(where\s+does\s+he\s+work|which\s+company|employer\w*|employed|current\s+job|works?\s+at)/i
+        pt: /\b(cliente\w*|empresa\s+onde|onde\s+(ele\s+)?trabalha|empregador\w*|sistema\s+propriet|c[oó]digo\s+da\s+empresa|projeto\s+interno|contrato\w*)/i,
+        en: /\b(clients?|company\s+where|where\s+does\s+he\s+work|employer\w*|proprietary\s+system|company\s+code|internal\s+project|contracts?)/i
       },
       pt: {
-        reason: "esta página não fala sobre o empregador atual dele",
-        instead: "os mais de 20 anos em sistemas corporativos, a stack e os projetos pessoais"
+        reason: "não falo sobre informação interna de empresa, cliente ou sistema proprietário",
+        instead: "a experiência dele em ERP e sistemas fiscais, a stack e os projetos públicos"
       },
       en: {
-        reason: "this page does not talk about his current employer",
-        instead: "the 20+ years in enterprise systems, the stack and the personal projects"
+        reason: "I do not talk about internal company, client or proprietary system information",
+        instead: "his experience in ERP and tax systems, the stack and the public projects"
       }
     },
     {
@@ -234,42 +382,42 @@ window.PF_KNOWLEDGE = {
         en: /\b(salary|salaries|how\s+much\s+does\s+he\s+(earn|charge|cost)|hourly\s+rate|compensation|day\s+rate|price|quote|budget)/i
       },
       pt: {
-        reason: "valores e remuneração não estão nesta página",
-        instead: "conversar por e-mail, que é onde esse assunto cabe"
+        reason: "salário e valores não estão neste perfil",
+        instead: "falar com ele pelo LinkedIn, pelo GitHub ou pelo portfólio"
       },
       en: {
-        reason: "rates and compensation are not on this page",
-        instead: "talking by email, which is where that conversation belongs"
+        reason: "salary and rates are not in this profile",
+        instead: "reaching him on LinkedIn, GitHub or the portfolio"
       }
     },
     {
-      id: "vida-pessoal",
+      id: "pessoal-sensivel",
       match: {
-        pt: /\b(idade|quantos\s+anos\s+(ele\s+)?tem|casad\w*|solteir\w*|filho\w*|fam[ií]lia|mora\s+(onde|em)|endere[cç]o|telefone|religi\w*|pol[ií]tic\w*|namorad\w*|esposa|marido|time\s+de\s+futebol|torce)/i,
-        en: /\b(how\s+old|his\s+age|married|single|children|kids|family|lives\s+(where|in)|address|phone\s+number|religio\w*|politic\w*|wife|husband|girlfriend|boyfriend)/i
+        pt: /\b(idade|quantos\s+anos\s+(ele\s+)?tem|casad\w*|solteir\w*|filho\w*|fam[ií]lia|mora\s+(onde|em)|endere[cç]o|telefone|sa[uú]de|doen[cç]a|religi\w*|pol[ií]tic\w*|partido|vota|advogad\w*|processo\s+judicial|jur[ií]dic\w*|namorad\w*|esposa|marido)/i,
+        en: /\b(how\s+old|his\s+age|married|single|children|kids|family|lives\s+(where|in)|address|phone\s+number|health|illness|religio\w*|politic\w*|votes?|lawyer|lawsuit|legal\s+matter|wife|husband|girlfriend|boyfriend)/i
       },
       pt: {
-        reason: "esta página é sobre o trabalho dele, não sobre a vida pessoal",
-        instead: "formação, stack, experiência e projetos"
+        reason: "não respondo sobre dados pessoais, família, saúde, política, religião ou assunto jurídico",
+        instead: "a formação, a experiência, as tecnologias e os projetos dele"
       },
       en: {
-        reason: "this page is about his work, not his personal life",
-        instead: "education, stack, experience and projects"
+        reason: "I do not answer about personal data, family, health, politics, religion or legal matters",
+        instead: "his education, experience, technologies and projects"
       }
     },
     {
-      id: "opiniao",
+      id: "falar-por-ele",
       match: {
-        pt: /\b(acha\s+(de|do|da|sobre)|opini[aã]o|prefere|melhor\s+linguagem|pior\s+linguagem|odeia|detesta|o\s+que\s+pensa\s+sobre|recomenda)/i,
-        en: /\b(what\s+does\s+he\s+think|opinion|prefers?|best\s+language|worst\s+language|hates|dislikes|recommends?)/i
+        pt: /\b(ele\s+(aceita|topa|pode|faria|assume|se\s+compromete)|contrat[ao]\s+ele|fecha\s+comigo|voc[eê]\s+garante|prometo|em\s+nome\s+dele)/i,
+        en: /\b(will\s+he\s+(accept|do|take|commit)|can\s+i\s+hire|do\s+you\s+guarantee|on\s+his\s+behalf|promise)/i
       },
       pt: {
-        reason: "não tenho opinião dele registrada aqui, e inventar uma seria colocar palavra na boca de alguém",
-        instead: "o que ele usa de fato: a stack e os projetos"
+        reason: "não falo em nome de Claudney nem assumo compromissos por ele",
+        instead: "falar direto com ele pelo LinkedIn ou pelo GitHub"
       },
       en: {
-        reason: "no opinion of his is recorded here, and inventing one would put words in someone's mouth",
-        instead: "what he actually uses: the stack and the projects"
+        reason: "I do not speak for Claudney or make commitments on his behalf",
+        instead: "talking to him directly on LinkedIn or GitHub"
       }
     }
   ]

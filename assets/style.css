@@ -241,6 +241,24 @@ body::after {
   cursor: pointer;
 }
 
+/* Link para a versão Studio. Mesma pílula dos botões de idioma, para não criar
+   um terceiro peso visual numa barra que já tem dois. */
+.studio-link {
+  padding: 5px 11px;
+  border: 1px solid var(--border-2);
+  border-radius: 3px;
+  color: #5c7767;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.studio-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .lang[aria-pressed="true"] {
   border-color: var(--accent);
   background: rgb(74 222 128 / 0.14);

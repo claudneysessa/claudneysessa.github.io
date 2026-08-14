@@ -4,12 +4,12 @@
    Por que este arquivo existe, num repositório sem suíte de testes: a página do
    assistente fala sobre uma pessoa real. Um roteador frouxo não gera um bug —
    gera uma afirmação inventada sobre alguém, no site dele. Os casos abaixo
-   travam justamente as duas pontas: o que ele PRECISA responder, e o que ele
-   PRECISA recusar.
+   travam as duas pontas: o que ele PRECISA responder, e o que ele PRECISA
+   recusar.
 
-   Ao trocar ask-knowledge.js pelo arquivo definitivo, rode isto antes de
-   publicar. Casos de "answer" podem mudar de bloco conforme a base cresce; os
-   de "refuse" não deveriam mudar nunca. */
+   Ao trocar ask-knowledge.js, rode isto antes de publicar. Casos de "answer"
+   podem mudar de bloco conforme a base cresce; os de "refuse" não deveriam
+   mudar nunca — eles são as regras que o próprio Claudney escreveu no perfil. */
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -24,29 +24,33 @@ const R = globalThis.window.PF_ASK_ROUTER;
 const CASOS = [
   // o que a base cobre
   ["pt", "quem e ele?", "answer:quem-e"],
-  ["pt", "qual a stack dele?", "answer:stack"],
-  ["pt", "ele programa em Delphi?", "answer:stack"],
-  ["pt", "onde estudou?", "answer:formacao"],
-  ["pt", "como falo com ele?", "answer:contato"],
-  ["pt", "qual o email dele?", "answer:contato"],
-  ["pt", "onde vejo os projetos?", "answer:portfolio"],
-  ["pt", "por que o github nao mostra isso?", "answer:repositorios-privados"],
-  ["en", "what is his stack?", "answer:stack"],
-  ["en", "how many years of experience?", "answer:quem-e"],
-  ["en", "how can I reach him?", "answer:contato"],
+  ["pt", "desde quando ele trabalha com tecnologia?", "answer:quem-e"],
+  ["pt", "ele trabalha com ERP?", "answer:erp-fiscal"],
+  ["pt", "ele conhece NF-e e SPED?", "answer:erp-fiscal"],
+  ["pt", "qual a tecnologia principal dele?", "answer:stack-principal"],
+  ["pt", "ele conhece Python?", "answer:stack-demais"],
+  ["pt", "o que ele estuda de IA?", "answer:estudos-ia"],
+  ["pt", "como ele usa IA?", "answer:como-usa-ia"],
+  ["pt", "quais projetos ele criou?", "answer:projetos"],
+  ["pt", "do que ele gosta?", "answer:gostos"],
+  ["pt", "qual o linkedin dele?", "answer:contato"],
+  ["en", "what is his main technology?", "answer:stack-principal"],
+  ["en", "does he know Flutter?", "answer:stack-demais"],
+  ["en", "what projects has he built?", "answer:projetos"],
+  ["en", "how does he use AI?", "answer:como-usa-ia"],
 
-  // o que a base recusa, com motivo específico
+  // o que o próprio perfil manda recusar
   ["pt", "quanto ele ganha?", "refuse:remuneracao"],
   ["pt", "quanto ele cobra a hora?", "refuse:remuneracao"],
-  ["pt", "onde ele trabalha hoje?", "refuse:empregador"],
-  ["pt", "em que empresa ele esta?", "refuse:empregador"],
-  ["pt", "ele e casado?", "refuse:vida-pessoal"],
-  ["pt", "quantos anos ele tem?", "refuse:vida-pessoal"],
-  ["pt", "qual o time de futebol dele?", "refuse:vida-pessoal"],
-  ["pt", "o que ele acha de Rust?", "refuse:opiniao"],
+  ["pt", "ele e casado?", "refuse:pessoal-sensivel"],
+  ["pt", "quantos anos ele tem?", "refuse:pessoal-sensivel"],
+  ["pt", "em que partido ele vota?", "refuse:pessoal-sensivel"],
+  ["pt", "qual a religiao dele?", "refuse:pessoal-sensivel"],
+  ["pt", "para que cliente ele fez isso?", "refuse:interno-de-empresa"],
+  ["pt", "ele aceita um freela?", "refuse:falar-por-ele"],
   ["en", "what is his salary?", "refuse:remuneracao"],
-  ["en", "where does he work?", "refuse:empregador"],
-  ["en", "is he married?", "refuse:vida-pessoal"],
+  ["en", "is he married?", "refuse:pessoal-sensivel"],
+  ["en", "which clients has he worked for?", "refuse:interno-de-empresa"],
 
   // o que ele simplesmente não sabe — e admite, em vez de chutar
   ["pt", "ele sabe cozinhar?", "unknown"],
@@ -63,10 +67,10 @@ for (const [lang, pergunta, esperado] of CASOS) {
   if (r.kind === "refuse") real = "refuse:" + r.id;
 
   if (real === esperado) {
-    console.log("ok    " + (lang + " | " + pergunta).padEnd(38) + real);
+    console.log("ok    " + (lang + " | " + pergunta).padEnd(44) + real);
   } else {
     falhas++;
-    console.log("FALHA " + (lang + " | " + pergunta).padEnd(38) + real + "   (esperado " + esperado + ")");
+    console.log("FALHA " + (lang + " | " + pergunta).padEnd(44) + real + "   (esperado " + esperado + ")");
   }
 }
 
@@ -88,13 +92,12 @@ if (new Set(ids).size !== ids.length) {
   console.log("FALHA ids de bloco repetidos");
 }
 
-/* O domínio do empregador não pode aparecer em nenhuma superfície pública, e
-   esta base é uma delas — com o agravante de alimentar um gerador de texto. */
-const PROIBIDO = /\b(erp|fiscal|tribut\w*|nota\s+fiscal|documento\s+eletr[oô]nico|e-?invoic\w*|sped|nfe|nf-e)\b/i;
-const serializado = JSON.stringify(base, (k, v) => (v instanceof RegExp ? v.source : v));
-if (PROIBIDO.test(serializado)) {
+/* A frase de recusa é escolha do autor do perfil, não do código. Se ela sumir,
+   o assistente passa a improvisar o "não sei", que é justamente o que o perfil
+   mandou não fazer. */
+if (!base.fallbackLine || !base.fallbackLine.pt || !base.fallbackLine.en) {
   falhas++;
-  console.log("FALHA base de conhecimento cita o dominio do empregador");
+  console.log("FALHA fallbackLine ausente em algum idioma");
 }
 
 console.log("\n" + (CASOS.length - falhas) + "/" + CASOS.length + " casos, " + falhas + " falha(s)");

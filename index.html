@@ -3,102 +3,114 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>claudney_sarti_sessa — Senior developer · .NET, Flutter, JavaScript · applied AI</title>
+    <title>Claudney Sarti Sessa — Senior developer · applied AI</title>
     <meta
       name="description"
-      content="Senior developer with over 20 years building enterprise systems. .NET, Flutter and JavaScript, plus applied AI and prompt engineering. Five AI projects that run entirely in your browser."
+      content="Senior developer with over 20 years building enterprise systems, now taking applied AI into the browser. Projects with live demos and open source code."
     />
-    <link rel="canonical" href="https://claudneysessa.github.io/" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://claudneysessa.github.io/" />
-    <meta property="og:title" content="claudney_sarti_sessa — Senior developer" />
-    <meta
-      property="og:description"
-      content="20+ years building enterprise systems. .NET, Flutter, JavaScript, applied AI and prompt engineering. Five AI projects that run entirely in your browser."
-    />
-    <meta name="twitter:card" content="summary" />
-
+    <link rel="stylesheet" href="./assets/studio.css" />
     <link
       rel="icon"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%2305070A'/><text x='3' y='23' font-family='monospace' font-size='19' fill='%234ADE80'>~/</text></svg>"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>◎</text></svg>"
     />
-    <link rel="preload" href="./assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class="page">
-      <header class="topbar">
-        <div class="dots" aria-hidden="true">
-          <span></span><span></span><span class="on"></span>
-        </div>
+    <!-- cenário: cinco camadas fixas, sem conteúdo, atrás de tudo -->
+    <div class="bg-layer bg-base" aria-hidden="true"></div>
+    <div class="bg-layer bg-grid" aria-hidden="true"></div>
+    <div class="bg-layer bg-halo-a" aria-hidden="true"></div>
+    <div class="bg-layer bg-halo-b" aria-hidden="true"></div>
+    <div class="bg-layer bg-vignette" aria-hidden="true"></div>
 
-        <div class="ident">
-          <h1 class="prompt">
-            <span class="tilde">~/</span>claudney_sarti_sessa<span
-              class="cursor"
-              aria-hidden="true"
-            ></span>
-          </h1>
-          <div class="badges" id="badges"></div>
-        </div>
-
-        <div class="controls">
-          <button type="button" class="lang" data-lang="en">EN</button>
-          <button type="button" class="lang" data-lang="pt">PT-BR</button>
-          <a class="animated-link" href="./monitor.html" id="animated-link"
-            >▶ animated version</a
-          >
-        </div>
-      </header>
-
-      <div class="shell">
-        <aside class="side scrollcol">
-          <p class="cmd"><span>$</span> cat profile.md</p>
-          <p class="bio" id="bio1"></p>
-          <p class="bio" id="bio2"></p>
-
-          <section class="stack">
-            <p class="cmd"><span>$</span> skills --list</p>
-            <ul class="chips" id="skills"></ul>
-          </section>
-
-          <section class="stack">
-            <p class="cmd"><span>$</span> cat education.log</p>
-            <ul class="edu" id="education"></ul>
-          </section>
-
-          <section class="stack">
-            <p class="cmd"><span>$</span> whois --links</p>
-            <div class="links" id="links"></div>
-          </section>
-        </aside>
-
-        <div class="rule" aria-hidden="true"></div>
-
-        <main class="main scrollcol">
-          <p class="cmd"><span>$</span> ls ~/projects</p>
-          <p class="intro" id="intro"></p>
-
-          <div id="groups"></div>
-
-          <section class="cta">
-            <div class="cta-text">
-              <p class="cta-title"><span>$</span> <span id="cta-title"></span></p>
-              <p class="cta-sub" id="cta-sub"></p>
-            </div>
-            <a class="cta-btn" href="mailto:claudneysartisessa@gmail.com"
-              ><span id="cta-btn"></span> →</a
-            >
-          </section>
-        </main>
+    <header class="topbar">
+      <span class="brand">CSS<i>.</i></span>
+      <span class="nav-role" id="navRole"></span>
+      <div class="topbar-actions">
+        <a class="pill" id="terminalBtn" href="./terminal.html"></a>
+        <button class="pill pill--lang lang" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button class="pill pill--lang lang" type="button" data-lang="pt" aria-pressed="false">PT-BR</button>
       </div>
-    </div>
+    </header>
 
-    <!-- Ordem obrigatória: projects.js → content.js → página. -->
+    <main class="wrap">
+      <section class="hero">
+        <p class="status-line"><i aria-hidden="true"></i><span id="available"></span></p>
+        <h1>Claudney<br />Sessa<i>.</i></h1>
+        <div class="hero-cols">
+          <p class="headline" id="headline"></p>
+          <p class="hero-bio" id="heroBio"></p>
+        </div>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section class="work">
+        <div class="work-head">
+          <h2 id="workTitle"></h2>
+          <span class="work-count" id="workCount"></span>
+          <p class="work-intro" id="workIntro"></p>
+        </div>
+        <div id="work"></div>
+      </section>
+
+      <section class="dossier">
+        <div class="dossier-head">
+          <h2 id="dossierTitle"></h2>
+          <i aria-hidden="true"></i>
+          <span>ID · CSS-2026</span>
+        </div>
+
+        <div class="card">
+          <span class="corner corner--tl-h" aria-hidden="true"></span>
+          <span class="corner corner--tl-v" aria-hidden="true"></span>
+          <span class="corner corner--br-h" aria-hidden="true"></span>
+          <span class="corner corner--br-v" aria-hidden="true"></span>
+
+          <div class="card-col">
+            <div class="photo">
+              <img src="./assets/foto-claudney.webp" alt="Claudney Sarti Sessa" width="460" height="460" />
+              <span class="photo-tint" aria-hidden="true"></span>
+              <span class="photo-scan" aria-hidden="true"></span>
+              <span class="photo-sweep" aria-hidden="true"></span>
+              <span class="corner corner--tl-h" aria-hidden="true"></span>
+              <span class="corner corner--tl-v" aria-hidden="true"></span>
+              <span class="corner corner--br-h" aria-hidden="true"></span>
+              <span class="corner corner--br-v" aria-hidden="true"></span>
+            </div>
+            <div class="fields" id="fields"></div>
+            <p class="clearance"><i aria-hidden="true"></i><span id="clearance"></span></p>
+          </div>
+
+          <div class="card-col">
+            <h3 class="col-label" id="craftTitle"></h3>
+            <p class="craft" id="craft"></p>
+            <ul class="chips" id="chips"></ul>
+          </div>
+
+          <div class="card-col">
+            <h3 class="col-label" id="eduTitle"></h3>
+            <ul class="edu" id="edu"></ul>
+            <div class="card-links" id="cardLinks"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <p class="cta-label" id="ctaLabel"></p>
+        <a class="cta-line" id="ctaLine" href="mailto:claudneysartisessa@gmail.com"></a>
+        <div class="foot">
+          <span id="footMail"></span>
+          <span>© 2026</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- print que segue o cursor; fica fora do fluxo e nunca recebe evento -->
+    <div class="hover-shot" id="hoverShot" aria-hidden="true"><img alt="" /></div>
+
+    <!-- ordem obrigatória: projetos → conteúdo → idioma → render -->
     <script src="./assets/projects.js"></script>
     <script src="./assets/content.js"></script>
     <script src="./assets/lang.js"></script>
-    <script src="./assets/portfolio.js"></script>
+    <script src="./assets/studio.js"></script>
   </body>
 </html>

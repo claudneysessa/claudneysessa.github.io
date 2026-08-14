@@ -20,6 +20,7 @@
     pt: {
       profileTitle: "Perfil",
       animatedBtn: "versao animada",
+      studioBtn: "versao studio",
       plainBtn: "SAIR DO CRT",
       crumbProfile: "perfil",
       cmd: "claudney_sarti_sessa --profile",
@@ -68,6 +69,7 @@
     en: {
       profileTitle: "Profile",
       animatedBtn: "animated version",
+      studioBtn: "studio version",
       plainBtn: "EXIT CRT",
       crumbProfile: "profile",
       cmd: "claudney_sarti_sessa --profile",
