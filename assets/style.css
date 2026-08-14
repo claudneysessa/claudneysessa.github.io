@@ -103,11 +103,23 @@ body::after {
   );
 }
 
+/* Coluna central. Num monitor ultra wide sem teto, o perfil vai para um canto,
+   os projetos para o outro, e a linha de texto fica longa demais para ler. */
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+}
+
+/* Acima do teto, as bordas marcam onde a página começa e acaba. */
+@media (min-width: 1681px) {
+  .page {
+    border-inline: 1px solid var(--border);
+    background: rgb(8 11 14 / 0.35);
+  }
 }
 
 /* ---------- Toolbar ---------- */
