@@ -208,6 +208,9 @@ a:hover { color: var(--hot); }
    rola por conta própria, então a ficha fica sempre visível ao lado do
    trabalho. Abaixo disso tudo empilha e a página volta a rolar inteira. */
 
+/* Coluna central. Sem o teto, num monitor 21:9 a ficha vai para o canto
+   esquerdo, o trabalho para o canto direito e sobra um vão morto no meio. O
+   cenário continua correndo de ponta a ponta por trás. */
 .page {
   position: relative;
   z-index: 1;
@@ -215,6 +218,17 @@ a:hover { color: var(--hot); }
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+}
+
+/* Acima do teto, as bordas marcam onde a página começa e acaba — sem elas o
+   conteúdo parece flutuar solto no fundo. */
+@media (min-width: 1681px) {
+  .page {
+    border-inline: 1px solid var(--line);
+    background: rgb(4 18 26 / 0.35);
+  }
 }
 
 .shell {
