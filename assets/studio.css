@@ -205,6 +205,14 @@ a:hover { color: var(--hot); }
 
 .wrap { position: relative; z-index: 1; }
 
+/* Coluna central. Sem isto o texto atravessa a tela inteira num monitor largo,
+   e a página fica comprida à toa. */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
 .hero {
   padding: clamp(48px, 9vw, 120px) var(--pad) clamp(40px, 6vw, 76px);
   border-bottom: 1px solid var(--line);
@@ -369,23 +377,26 @@ a:hover { color: var(--hot); }
   background: rgb(64 200 235 / 0.12);
 }
 
-.group { padding-bottom: clamp(20px, 3vw, 34px); }
+.group { padding-bottom: clamp(28px, 4vw, 46px); }
 
 .group-head {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 6px;
+  gap: 14px;
+  padding-bottom: 14px;
 }
 
+/* A categoria é a única coisa que separa 17 cards em blocos legíveis, então
+   ela precisa de peso próprio — em mono e 10px ela sumia entre os cards. */
 .group-head h3 {
   margin: 0;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-family: var(--display);
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--accent-hi);
+  text-shadow: 0 0 22px rgb(64 200 235 / 0.28);
 }
 
 .group-head i {
@@ -394,15 +405,29 @@ a:hover { color: var(--hot); }
   background: linear-gradient(90deg, rgb(64 200 235 / 0.35), rgb(64 200 235 / 0.04));
 }
 
-/* linha de projeto */
+/* Grade de cards. No máximo três por linha: com quatro, a captura fica pequena
+   demais para dizer alguma coisa, e o nome do projeto começa a quebrar. */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1040px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* card de projeto */
 .row {
   position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 8px 20px;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: clamp(16px, 2.2vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel-soft);
@@ -421,12 +446,19 @@ a:hover { color: var(--hot); }
   color: var(--text);
 }
 
+/* O número vira etiqueta sobre a captura, e não uma coluna: numa grade de três
+   colunas, uma coluna só para dois dígitos come largura que o texto precisa. */
 .row-num {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  padding: 3px 7px;
+  border-radius: 3px;
+  background: rgb(4 18 26 / 0.8);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--accent);
-  align-self: start;
-  padding-top: 6px;
 }
 
 .row-body { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -435,16 +467,16 @@ a:hover { color: var(--hot); }
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 6px 12px;
+  gap: 4px 10px;
 }
 
 .row-title h4 {
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(22px, 3.2vw, 38px);
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .row-tag {
@@ -456,36 +488,41 @@ a:hover { color: var(--hot); }
 
 .row-desc {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  line-height: 1.55;
   color: var(--text-2);
-  max-width: 62ch;
   text-wrap: pretty;
 }
 
 .row-note {
   margin: 0;
   font-family: var(--mono);
-  font-size: 11.5px;
-  line-height: 1.55;
+  font-size: 11px;
+  line-height: 1.5;
   color: var(--label-2);
-  max-width: 62ch;
   text-wrap: pretty;
 }
 
 .row-arrow {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 2;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 99px;
+  background: rgb(4 18 26 / 0.8);
   font-family: var(--display);
-  font-size: 18px;
+  font-size: 14px;
   color: var(--accent);
-  align-self: center;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
-/* print inline: aparece abaixo de 900px, onde não há cursor para seguir */
+/* A captura passa a ser o topo do card, como na página terminal. */
 .row-shot {
-  margin-top: 4px;
   width: 100%;
-  max-width: 340px;
   aspect-ratio: 16 / 10;
   border: 1px solid rgb(64 200 235 / 0.2);
   border-radius: 5px;
@@ -498,25 +535,6 @@ a:hover { color: var(--hot); }
 .row-shot--logo-dark { background: #16151a; }
 .row-shot--logo img { object-fit: contain; padding: 14px; }
 
-/* print que segue o cursor, só no desktop */
-.hover-shot {
-  position: fixed;
-  z-index: 40;
-  width: 320px;
-  height: 200px;
-  border: 1px solid rgb(64 200 235 / 0.35);
-  border-radius: 6px;
-  overflow: hidden;
-  background: var(--bg-2);
-  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.9);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.hover-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.hover-shot.is-on { opacity: 1; }
-
 /* ---------- Ficha de identificação ---------- */
 
 .dossier {
@@ -525,7 +543,6 @@ a:hover { color: var(--hot); }
 }
 
 .dossier-head {
-  max-width: 1080px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -555,9 +572,11 @@ a:hover { color: var(--hot); }
   color: var(--label);
 }
 
+/* A ficha ocupa a mesma coluna central do resto: encostada à esquerda num
+   monitor largo, ela parecia um bloco solto. */
 .card {
   position: relative;
-  max-width: 1080px;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 268px), 1fr));
   border: 1px solid rgb(64 200 235 / 0.2);
@@ -805,20 +824,8 @@ a:hover { color: var(--hot); }
 
 /* ---------- Larguras ---------- */
 
-/* O print seguindo o cursor só existe onde há cursor. Abaixo de 900px ele
-   aparece dentro da linha, que é onde o dedo consegue ver. */
-@media (max-width: 899px) {
-  .hover-shot { display: none; }
-  .row { grid-template-columns: auto 1fr; }
-  .row-arrow { display: none; }
-}
-
-@media (min-width: 900px) {
-  .row-shot { display: none; }
-}
-
 @media (max-width: 599px) {
-  .row { padding: 14px; gap: 6px 12px; }
+  .row { padding: 14px; }
   .work-intro { margin-left: 0; }
   .card-col { border-right: 0; border-bottom: 1px solid var(--line); }
   .card-col:last-child { border-bottom: 0; }

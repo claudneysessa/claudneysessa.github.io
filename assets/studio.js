@@ -150,19 +150,22 @@
       cab.appendChild(el("i"));
       grupo.appendChild(cab);
 
+      var grade = el("div", "cards");
+
       g.items.forEach(function (p) {
         if (!numeros[p.slug]) numeros[p.slug] = ++n;
         var a = el("a", "row");
         a.href = destino(p);
-        a.dataset.shot = p.shot;
-        a.dataset.media = p.media || "shot";
-        a.dataset.plate = p.plate || "";
         if (/^https?:/.test(a.href)) {
           a.target = "_blank";
           a.rel = "noopener";
         }
 
+        /* A captura abre o card, como na página terminal. O número e a seta
+           flutuam sobre ela, para não roubarem largura do texto. */
+        a.appendChild(montarPrint(p, t, "row-shot"));
         a.appendChild(el("span", "row-num", String(numeros[p.slug]).padStart(2, "0")));
+        a.appendChild(el("span", "row-arrow", "↗"));
 
         var corpo = el("div", "row-body");
         var titulo = el("div", "row-title");
@@ -171,13 +174,12 @@
         corpo.appendChild(titulo);
         corpo.appendChild(el("p", "row-desc", p.desc));
         if (p.note) corpo.appendChild(el("p", "row-note", "// " + p.note));
-        corpo.appendChild(montarPrint(p, t, "row-shot"));
         a.appendChild(corpo);
 
-        a.appendChild(el("span", "row-arrow", "↗"));
-        grupo.appendChild(a);
+        grade.appendChild(a);
       });
 
+      grupo.appendChild(grade);
       alvoWork.appendChild(grupo);
     });
 
@@ -235,49 +237,13 @@
     $("#footMail").textContent = t.email;
   }
 
-  /* ------------------------------------------------------------------
-     Print seguindo o cursor.
-
-     Atualiza o transform direto no DOM, sem re-render e sem entrar no fluxo do
-     React que aqui não existe: é uma linha por mousemove. Só liga onde há
-     ponteiro fino — no toque não existe hover, e o print inline já resolve.
-     ------------------------------------------------------------------ */
-  function ligarHoverShot() {
-    if (!window.matchMedia("(min-width: 900px) and (pointer: fine)").matches) return;
-
-    var caixa = $("#hoverShot");
-    var img = caixa.querySelector("img");
-    var visivel = false;
-
-    document.addEventListener("mouseover", function (ev) {
-      var linha = ev.target.closest(".row");
-      if (!linha) return;
-      img.src = linha.dataset.shot;
-      caixa.classList.toggle("row-shot--logo", linha.dataset.media === "logo");
-      caixa.classList.add("is-on");
-      visivel = true;
-    });
-
-    document.addEventListener("mouseout", function (ev) {
-      var linha = ev.target.closest(".row");
-      if (!linha) return;
-      if (linha.contains(ev.relatedTarget)) return;
-      caixa.classList.remove("is-on");
-      visivel = false;
-    });
-
-    document.addEventListener("mousemove", function (ev) {
-      if (!visivel) return;
-      var x = Math.min(ev.clientX + 26, window.innerWidth - 340);
-      var y = Math.min(ev.clientY + 20, window.innerHeight - 220);
-      caixa.style.transform = "translate(" + x + "px," + y + "px)";
-    });
-  }
+  /* O print que seguia o cursor saiu junto com a mudança para grade de cards:
+     com a captura dentro do próprio card, ele mostrava a mesma imagem duas
+     vezes ao mesmo tempo. */
 
   function iniciar() {
     window.PF_LANG.onChange(render);
     window.PF_LANG.start();
-    ligarHoverShot();
   }
 
   if (document.readyState === "loading") {
