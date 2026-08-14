@@ -628,6 +628,95 @@ body::after {
   color: var(--bg);
 }
 
+/* ---------- Telas estreitas ---------- */
+
+/* O layout já nascia em uma coluna, então isto não é uma reescrita: é a
+   correção do que realmente apertava num telefone, medido em 320, 360 e 390px
+   com o conteúdo real. Nada daqui alcança o desktop. */
+
+@media (max-width: 599px) {
+  /* A captura tinha 260px fixos ao lado de um texto de largura total, o que
+     deixava uma sobra morta à direita do card. No telefone ela ocupa a linha. */
+  .shot {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .card-body {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .card-bar {
+    padding: 11px 14px;
+  }
+
+  /* A contagem "// 3 projetos" caía na segunda linha colada no título. */
+  .group-head {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .group {
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .topbar {
+    padding: 12px 14px;
+  }
+
+  .side {
+    padding: 20px 14px;
+  }
+
+  .main {
+    padding: 22px 14px 52px;
+  }
+}
+
+/* Em 320px o prompt em nowrap estourava 11px para fora da tela — o único
+   overflow horizontal que a página tinha. */
+@media (max-width: 359px) {
+  .prompt {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Alvos de toque. O dedo não acerta um link de 20px de altura; o mouse acerta.
+   Por isso a regra é por tipo de ponteiro, e não por largura: um notebook com
+   tela sensível ao toque também ganha o alvo maior, e um telefone ligado a um
+   mouse não ganha. */
+@media (pointer: coarse) {
+  .lang,
+  .animated-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 5px 14px;
+  }
+
+  .cta-btn,
+  .card-links a,
+  .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .card-links {
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    padding-top: 0;
+  }
+
+  .links {
+    gap: 0;
+  }
+}
+
 /* ---------- Desktop: rolagem independente ---------- */
 
 @media (min-width: 900px) {

@@ -345,6 +345,67 @@ body.crt::after {
   width: min(420px, 62vw);
 }
 
+/* ---------- Telefone: a tela cresce, em vez de rolar por dentro ---------- */
+
+/* No desktop o CRT é uma caixa de 100vh com rolagem interna, e isso funciona:
+   o aparelho inteiro cabe na tela. Num telefone a mesma caixa empurra o
+   ./abrir_portfolio para baixo da dobra de um scroll aninhado — o gesto que
+   ninguém tenta, porque nada indica que aquela região rola. Abaixo de 700px a
+   página volta a rolar inteira e o conteúdo aparece todo, com o aparelho e o
+   pedestal preservados. */
+@media (max-width: 700px) {
+  body.crt {
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+
+  /* A altura solta, mas o recorte fica: o chão em perspectiva tem 220vw de
+     largura e é a moldura que o contém. Soltar o overflow aqui devolve uma
+     barra de rolagem horizontal de mais de 200px. */
+  .scene {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .monitor {
+    height: auto;
+  }
+
+  .bezel {
+    flex: none;
+  }
+
+  .screen-bar {
+    padding: 12px 18px;
+  }
+
+  .screen-scroll {
+    overflow: visible;
+    padding: 22px 18px 26px;
+  }
+
+  /* Sem a linha inteira para dividir, empurrar os links para a direita só cria
+     um vão no meio do bloco. */
+  .crt-links {
+    margin-left: 0;
+  }
+}
+
+@media (pointer: coarse) {
+  .crt-btn,
+  .open-btn,
+  .crt-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .crt-btn {
+    padding: 5px 14px;
+  }
+}
+
 /* ---------- Revelações do boot ---------- */
 
 @keyframes fadeUp {
