@@ -269,6 +269,107 @@ window.PF_PROJECTS = {
         "demoLabel": "explore"
       }
     },
+    "bomber-hero": {
+      "shot": "./assets/shots/shot-bomber-hero.webp",
+      "demoUrl": "https://claudneysessa.github.io/bomber-hero/",
+      "codeUrl": "https://github.com/claudneysessa/bomber-hero",
+      "tags": {
+        "pt": ["HTML5 Canvas", "JavaScript puro", "Godot 4", "GDScript", "Sem build"],
+        "en": ["HTML5 Canvas", "Vanilla JavaScript", "Godot 4", "GDScript", "No build"]
+      },
+      "pt": {
+        "name": "BomberHero",
+        "desc": "Releitura do jogo de bombas do SNES em que a arma escolhida muda a fase: faca, espada e pistola ferem monstros mas não quebram blocos, e só a bomba faz as duas coisas — de quebra queimando o item que você ia pegar. Fases procedurais infinitas, e o chefe a cada três fases é também o checkpoint. Existe duas vezes, em Canvas e em Godot, sem nenhuma dependência: cada sprite é desenhado por código e cada som é sintetizado na hora.",
+        "note": "Código, documentação e commits gerados inteiramente com o OpenCode e o modelo DeepSeek v4 Flash (FREE). O texto do jogo só existe em português.",
+        "demoLabel": "jogar"
+      },
+      "en": {
+        "name": "BomberHero",
+        "desc": "A reinterpretation of the SNES bomb game where the weapon you pick changes the level: knife, sword and pistol hurt monsters but never break blocks, and only the bomb does both — while burning the power-up you were about to collect. Levels are procedural and endless, and the boss every three levels is also the checkpoint. It exists twice, in Canvas and in Godot, with no dependency at all: every sprite is drawn by code and every sound is synthesized at runtime.",
+        "note": "Code, documentation and commits generated entirely with OpenCode and the DeepSeek v4 Flash (FREE) model. The in-game text is Portuguese only.",
+        "demoLabel": "play"
+      }
+    },
+    "one-shot-bird": {
+      "shot": "./assets/shots/shot-one-shot-bird.webp",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/one-shot-bird",
+      "tags": {
+        "pt": ["Godot 4.7", "GDScript", "Física 2D", "Pixel art procedural"],
+        "en": ["Godot 4.7", "GDScript", "2D physics", "Procedural pixel art"]
+      },
+      "pt": {
+        "name": "One Shot Bird",
+        "desc": "Jogo de estilingue em que nada é roteirizado: os pontos brancos da mira são a trajetória calculada pela mesma equação que o motor vai integrar, e derrubar a torre em cima do porco é uma forma legítima de vencer. Não há uma única imagem no repositório — cada sprite nasce de um mapa em texto convertido em textura quando o jogo abre.",
+        "note": "Sem demonstração: o Godot exporta para HTML5, mas essa exportação ainda não está configurada, então roda com o Godot instalado. Feito inteiramente com o OpenCode e o modelo DeepSeek v4 Flash (FREE)."
+      },
+      "en": {
+        "name": "One Shot Bird",
+        "desc": "A slingshot game where nothing is scripted: the white aiming dots are the trajectory computed from the same equation the engine will integrate, and dropping the tower onto the pig is a legitimate way to win. There is not a single image in the repository — every sprite comes from a text map turned into a texture when the game starts.",
+        "note": "No demo: Godot can export to HTML5, but that export is not set up yet, so it runs with Godot installed. Built entirely with OpenCode and the DeepSeek v4 Flash (FREE) model."
+      }
+    },
+    "my-open-pins": {
+      "shot": "./assets/shots/shot-my-open-pins.webp",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/my-open-pins",
+      "tags": {
+        "pt": ["C#", "WPF", ".NET 10", "SQLite", "Windows"],
+        "en": ["C#", "WPF", ".NET 10", "SQLite", "Windows"]
+      },
+      "pt": {
+        "name": "MyOpenPins",
+        "desc": "Notas adesivas que ficam soltas na área de trabalho do Windows, controladas só pelo ícone na bandeja — não há janela principal. Portátil de verdade: o banco SQLite e as preferências vivem ao lado do executável, então copiar a pasta para um pendrive leva as notas junto, com cor, formatação, posição e tamanho intactos.",
+        "note": "Sem demonstração: é um aplicativo de desktop Windows, não roda no navegador. Feito com o OpenCode e o modelo DeepSeek v4 Flash (FREE), e a interface só existe em português."
+      },
+      "en": {
+        "name": "MyOpenPins",
+        "desc": "Sticky notes floating on the Windows desktop, driven entirely from the tray icon — there is no main window. Genuinely portable: the SQLite database and the preferences live next to the executable, so copying the folder to a USB stick takes your notes with it, colors, formatting, position and size intact.",
+        "note": "No demo: this is a Windows desktop application, it does not run in a browser. Built with OpenCode and the DeepSeek v4 Flash (FREE) model, and the interface is Portuguese only."
+      }
+    },
+    "flutter-ui-challenges": {
+      "shot": "./assets/shots/shot-flutter-ui-challenges.webp",
+      "demoUrl": "https://claudneysessa.github.io/flutter-ui-challenges/",
+      "codeUrl": "https://github.com/claudneysessa/flutter-ui-challenges",
+      "tags": {
+        "pt": ["Flutter 3.44", "Dart 3", "134 telas", "Fork mantido"],
+        "en": ["Flutter 3.44", "Dart 3", "134 screens", "Maintained fork"]
+      },
+      "pt": {
+        "name": "Flutter UI Challenges",
+        "desc": "Catálogo de 134 telas de aplicativo reconstruídas em Flutter, navegáveis a partir de um app só, que também mostra o código-fonte da tela que você está olhando. O projeto original foi arquivado pelo autor em 2024 e não compilava mais; este fork o traz de volta para o Flutter 3.44 e o Dart 3.",
+        "note": "Fork mantido do projeto de Damodar Lohani, com licença MIT e autoria originais preservadas. O trabalho aqui é a revivência: migração de toolchain, correções e testes.",
+        "demoLabel": "demo"
+      },
+      "en": {
+        "name": "Flutter UI Challenges",
+        "desc": "A catalogue of 134 app screens rebuilt in Flutter, browsable from a single app that also shows you the source of whichever screen you are looking at. The original project was archived by its author in 2024 and no longer compiled; this fork brings it back on Flutter 3.44 and Dart 3.",
+        "note": "Maintained fork of Damodar Lohani's project, keeping the original MIT license and authorship. The work here is the revival: toolchain migration, fixes and tests.",
+        "demoLabel": "demo"
+      }
+    },
+    "flutter-playground": {
+      "shot": "./assets/shots/shot-flutter-playground.webp",
+      "demoUrl": "https://claudneysessa.github.io/flutter-playground/",
+      "codeUrl": "https://github.com/claudneysessa/flutter-playground",
+      "tags": {
+        "pt": ["Flutter 3.44", "Dart 3", "BSD-2", "Fork mantido"],
+        "en": ["Flutter 3.44", "Dart 3", "BSD-2", "Maintained fork"]
+      },
+      "pt": {
+        "name": "Flutter Playground",
+        "desc": "Aplicativo-laboratório com exemplos isolados dos recursos do Flutter — barras, gavetas, animações, listas e transições — para experimentar cada um sem montar um projeto do zero. Parou de receber atualizações em 2021 e não compilava mais; este fork o traz de volta para o Flutter 3.44 e o Dart 3.",
+        "note": "Fork mantido do projeto de Bhavik Makwana, com licença BSD 2-Clause e autoria originais preservadas. O trabalho aqui é a revivência, não a autoria original.",
+        "demoLabel": "demo"
+      },
+      "en": {
+        "name": "Flutter Playground",
+        "desc": "A laboratory app with isolated examples of Flutter features — bars, drawers, animations, lists and transitions — so you can try each one without wiring up a project first. It stopped receiving updates in 2021 and no longer compiled; this fork brings it back on Flutter 3.44 and Dart 3.",
+        "note": "Maintained fork of Bhavik Makwana's project, keeping the original BSD 2-Clause license and authorship. The work here is the revival, not the original authorship.",
+        "demoLabel": "demo"
+      }
+    },
     "medina-trainer": {
       "shot": "./assets/shots/logo-medina.webp",
       "media": "logo",
@@ -300,10 +401,11 @@ window.PF_PROJECTS = {
     { "id": "rec", "slugs": ["vincupet"], "pt": "Recomendação e dados", "en": "Recommendation and data" },
     { "id": "mcp", "slugs": ["mcp-gemini-video"], "pt": "MCP e skills para agentes", "en": "MCP servers and agent skills" },
     { "id": "ai-skills", "slugs": ["ctx404"], "pt": "Skills de IA", "en": "AI skills" },
-    { "id": "tools", "slugs": ["local-token-monitor", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
+    { "id": "games", "slugs": ["bomber-hero", "one-shot-bird"], "pt": "Jogos", "en": "Games" },
+    { "id": "tools", "slugs": ["local-token-monitor", "my-open-pins", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
     { "id": "client", "slugs": ["medina-trainer"], "pt": "Trabalho para clientes", "en": "Client work" },
-    { "id": "oss", "slugs": ["local-token-monitor", "ctx404"], "pt": "Open Source", "en": "Open Source" },
-    { "id": "contrib", "slugs": ["paygo_sdk"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
+    { "id": "oss", "slugs": ["local-token-monitor", "ctx404", "bomber-hero", "one-shot-bird", "my-open-pins"], "pt": "Open Source", "en": "Open Source" },
+    { "id": "contrib", "slugs": ["paygo_sdk", "flutter-ui-challenges", "flutter-playground"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]
   /* Um projeto pode aparecer em mais de um grupo — os grupos são recortes de
      leitura, não uma partição. Por isso o total conta slugs distintos: somar
