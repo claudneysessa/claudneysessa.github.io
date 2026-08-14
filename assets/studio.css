@@ -203,18 +203,54 @@ a:hover { color: var(--hot); }
 
 /* ---------- Herói ---------- */
 
-.wrap { position: relative; z-index: 1; }
+/* ---------- Estrutura ----------
+   Mesma lógica da página terminal: acima de 900px a janela trava e cada coluna
+   rola por conta própria, então a ficha fica sempre visível ao lado do
+   trabalho. Abaixo disso tudo empilha e a página volta a rolar inteira. */
 
-/* Coluna central. Sem isto o texto atravessa a tela inteira num monitor largo,
-   e a página fica comprida à toa. */
-.container {
+.page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
-  max-width: 1280px;
-  margin-inline: auto;
+}
+
+.shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.side {
+  width: 100%;
+  padding: 22px var(--pad) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rule { height: 1px; width: 100%; background: var(--line); }
+
+/* container-type habilita as unidades cqw usadas no título: elas medem esta
+   coluna, e não a janela. */
+.main { width: 100%; container-type: inline-size; }
+
+.scrollcol { scrollbar-width: thin; scrollbar-color: var(--line-3) transparent; }
+.scrollcol::-webkit-scrollbar { width: 10px; }
+
+.scrollcol::-webkit-scrollbar-thumb {
+  background: rgb(64 200 235 / 0.22);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 99px;
 }
 
 .hero {
-  padding: clamp(48px, 9vw, 120px) var(--pad) clamp(40px, 6vw, 76px);
+  padding: clamp(40px, 6vw, 72px) var(--pad) clamp(32px, 4vw, 56px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -241,12 +277,14 @@ a:hover { color: var(--hot); }
   color: var(--text-2);
 }
 
+/* O nome mede pela largura da COLUNA, não da janela: com a ficha ocupando
+   380px à esquerda, um clamp em vw estourava para fora da coluna principal. */
 .hero h1 {
   margin: 0;
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(46px, 12.5vw, 186px);
-  line-height: 0.85;
+  font-size: clamp(44px, 11cqw, 128px);
+  line-height: 0.86;
   letter-spacing: -0.045em;
   text-transform: uppercase;
 }
@@ -413,11 +451,13 @@ a:hover { color: var(--hot); }
   gap: 14px;
 }
 
-@media (min-width: 640px) {
+/* As colunas medem a coluna de trabalho, não a janela: a ficha ocupa 380px à
+   esquerda, então uma media query de largura de janela erraria a conta. */
+@container (min-width: 620px) {
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (min-width: 1040px) {
+@container (min-width: 980px) {
   .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
@@ -537,16 +577,10 @@ a:hover { color: var(--hot); }
 
 /* ---------- Ficha de identificação ---------- */
 
-.dossier {
-  padding: clamp(40px, 6vw, 80px) var(--pad);
-  border-top: 1px solid var(--line);
-}
-
 .dossier-head {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-bottom: 16px;
 }
 
 .dossier-head h2 {
@@ -572,13 +606,13 @@ a:hover { color: var(--hot); }
   color: var(--label);
 }
 
-/* A ficha ocupa a mesma coluna central do resto: encostada à esquerda num
-   monitor largo, ela parecia um bloco solto. */
+/* A ficha é a coluna da esquerda inteira: uma peça vertical, não três colunas
+   lado a lado como no protótipo, que pressupunha a largura da página. */
 .card {
   position: relative;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 268px), 1fr));
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgb(64 200 235 / 0.2);
   border-radius: 10px;
   background: linear-gradient(rgb(11 38 50 / 0.6), rgb(6 24 33 / 0.52));
@@ -598,20 +632,21 @@ a:hover { color: var(--hot); }
 .corner--br-v { bottom: 0; right: 0; width: 1px; height: 46px; }
 
 .card-col {
-  padding: clamp(18px, 2vw, 24px);
+  padding: 18px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  border-right: 1px solid var(--line);
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
-.card-col:last-child { border-right: 0; }
+.card-col:last-child { border-bottom: 0; }
 
+/* A foto ocupa a largura da ficha. Num painel de 380px, os 186px do protótipo
+   deixavam metade da coluna vazia ao lado dela. */
 .photo {
   position: relative;
   width: 100%;
-  max-width: 186px;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   border: 1px solid rgb(64 200 235 / 0.3);
   border-radius: 6px;
   overflow: hidden;
@@ -824,11 +859,36 @@ a:hover { color: var(--hot); }
 
 /* ---------- Larguras ---------- */
 
+/* ---------- Desktop: janela travada, colunas rolando sozinhas ---------- */
+
+@media (min-width: 900px) {
+  .page { height: 100vh; overflow: hidden; }
+
+  .shell { flex-direction: row; overflow: hidden; }
+
+  .side {
+    width: 380px;
+    flex: 0 0 380px;
+    overflow-y: auto;
+    padding: 26px 24px 40px 40px;
+  }
+
+  .rule { width: 1px; height: 100%; flex: 0 0 1px; }
+
+  .main { flex: 1; overflow-y: auto; }
+}
+
+@media (max-width: 899px) {
+  /* A ficha vem primeiro no HTML porque é a coluna da esquerda no desktop.
+     Empilhada, o nome tem que abrir a página — então ela desce. */
+  .side { order: 2; border-top: 1px solid var(--line); }
+  .main { order: 1; }
+  .rule { display: none; }
+}
+
 @media (max-width: 599px) {
   .row { padding: 14px; }
   .work-intro { margin-left: 0; }
-  .card-col { border-right: 0; border-bottom: 1px solid var(--line); }
-  .card-col:last-child { border-bottom: 0; }
 }
 
 /* Alvo de toque: a regra é por ponteiro, não por largura — notebook com tela
