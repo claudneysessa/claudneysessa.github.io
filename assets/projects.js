@@ -370,6 +370,25 @@ window.PF_PROJECTS = {
         "demoLabel": "demo"
       }
     },
+    "flutter_catalog": {
+      "shot": "./assets/shots/shot-flutter-catalog.webp",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/flutter_catalog",
+      "tags": {
+        "pt": ["Flutter 3.44", "Dart 3", "115 exemplos", "Fork mantido"],
+        "en": ["Flutter 3.44", "Dart 3", "115 examples", "Maintained fork"]
+      },
+      "pt": {
+        "name": "Flutter Catalog",
+        "desc": "Catálogo com 115 exemplos executáveis do Flutter em 20 grupos — widgets, layouts, listas, navegação, animações, gráficos, gerenciamento de estado, persistência, rede e Firebase. Cada tela tem uma aba Código que mostra o arquivo-fonte exato por trás dela, com realce de sintaxe e link para o arquivo no GitHub.",
+        "note": "Fork mantido do projeto de X.Wei, com licença MIT e autoria originais preservadas. O trabalho aqui é a revivência para Flutter 3.44 e Dart 3. Sem demonstração: o app é Android e iOS, não tem versão web."
+      },
+      "en": {
+        "name": "Flutter Catalog",
+        "desc": "A catalogue of 115 runnable Flutter examples across 20 groups — widgets, layouts, lists, navigation, animations, charts, state management, persistence, networking and Firebase. Every screen has a Code tab showing the exact source file behind it, with syntax highlighting and a link to the file on GitHub.",
+        "note": "Maintained fork of X.Wei's project, keeping the original MIT license and authorship. The work here is the revival on Flutter 3.44 and Dart 3. No demo: the app targets Android and iOS, with no web build."
+      }
+    },
     "medina-trainer": {
       "shot": "./assets/shots/logo-medina.webp",
       "media": "logo",
@@ -405,7 +424,7 @@ window.PF_PROJECTS = {
     { "id": "tools", "slugs": ["local-token-monitor", "my-open-pins", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
     { "id": "client", "slugs": ["medina-trainer"], "pt": "Trabalho para clientes", "en": "Client work" },
     { "id": "oss", "slugs": ["local-token-monitor", "ctx404", "bomber-hero", "one-shot-bird", "my-open-pins"], "pt": "Open Source", "en": "Open Source" },
-    { "id": "contrib", "slugs": ["paygo_sdk", "flutter-ui-challenges", "flutter-playground"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
+    { "id": "contrib", "slugs": ["paygo_sdk", "flutter-ui-challenges", "flutter-playground", "flutter_catalog"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]
   /* Um projeto pode aparecer em mais de um grupo — os grupos são recortes de
      leitura, não uma partição. Por isso o total conta slugs distintos: somar
