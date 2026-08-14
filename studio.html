@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Claudney Sarti Sessa — Senior developer · applied AI</title>
+    <meta
+      name="description"
+      content="Senior developer with over 20 years building enterprise systems, now taking applied AI into the browser. Projects with live demos and open source code."
+    />
+    <link rel="stylesheet" href="./assets/studio.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>◎</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- cenário: cinco camadas fixas, sem conteúdo, atrás de tudo -->
+    <div class="bg-layer bg-base" aria-hidden="true"></div>
+    <div class="bg-layer bg-grid" aria-hidden="true"></div>
+    <div class="bg-layer bg-halo-a" aria-hidden="true"></div>
+    <div class="bg-layer bg-halo-b" aria-hidden="true"></div>
+    <div class="bg-layer bg-vignette" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <span class="brand">CSS<i>.</i></span>
+      <span class="nav-role" id="navRole"></span>
+      <div class="topbar-actions">
+        <a class="pill" id="terminalBtn" href="./terminal.html"></a>
+        <button class="pill pill--lang lang" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button class="pill pill--lang lang" type="button" data-lang="pt" aria-pressed="false">PT-BR</button>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <p class="status-line"><i aria-hidden="true"></i><span id="available"></span></p>
+        <h1>Claudney<br />Sessa<i>.</i></h1>
+        <div class="hero-cols">
+          <p class="headline" id="headline"></p>
+          <p class="hero-bio" id="heroBio"></p>
+        </div>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section class="work">
+        <div class="work-head">
+          <h2 id="workTitle"></h2>
+          <span class="work-count" id="workCount"></span>
+          <p class="work-intro" id="workIntro"></p>
+        </div>
+        <div id="work"></div>
+      </section>
+
+      <section class="dossier">
+        <div class="dossier-head">
+          <h2 id="dossierTitle"></h2>
+          <i aria-hidden="true"></i>
+          <span>ID · CSS-2026</span>
+        </div>
+
+        <div class="card">
+          <span class="corner corner--tl-h" aria-hidden="true"></span>
+          <span class="corner corner--tl-v" aria-hidden="true"></span>
+          <span class="corner corner--br-h" aria-hidden="true"></span>
+          <span class="corner corner--br-v" aria-hidden="true"></span>
+
+          <div class="card-col">
+            <div class="photo">
+              <img src="./assets/foto-claudney.webp" alt="Claudney Sarti Sessa" width="460" height="460" />
+              <span class="photo-tint" aria-hidden="true"></span>
+              <span class="photo-scan" aria-hidden="true"></span>
+              <span class="photo-sweep" aria-hidden="true"></span>
+              <span class="corner corner--tl-h" aria-hidden="true"></span>
+              <span class="corner corner--tl-v" aria-hidden="true"></span>
+              <span class="corner corner--br-h" aria-hidden="true"></span>
+              <span class="corner corner--br-v" aria-hidden="true"></span>
+            </div>
+            <div class="fields" id="fields"></div>
+            <p class="clearance"><i aria-hidden="true"></i><span id="clearance"></span></p>
+          </div>
+
+          <div class="card-col">
+            <h3 class="col-label" id="craftTitle"></h3>
+            <p class="craft" id="craft"></p>
+            <ul class="chips" id="chips"></ul>
+          </div>
+
+          <div class="card-col">
+            <h3 class="col-label" id="eduTitle"></h3>
+            <ul class="edu" id="edu"></ul>
+            <div class="card-links" id="cardLinks"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <p class="cta-label" id="ctaLabel"></p>
+        <a class="cta-line" id="ctaLine" href="mailto:claudneysartisessa@gmail.com"></a>
+        <div class="foot">
+          <span id="footMail"></span>
+          <span>© 2026</span>
+        </div>
+      </section>
+    </main>
+
+    <!-- print que segue o cursor; fica fora do fluxo e nunca recebe evento -->
+    <div class="hover-shot" id="hoverShot" aria-hidden="true"><img alt="" /></div>
+
+    <!-- ordem obrigatória: projetos → conteúdo → idioma → render -->
+    <script src="./assets/projects.js"></script>
+    <script src="./assets/content.js"></script>
+    <script src="./assets/lang.js"></script>
+    <script src="./assets/studio.js"></script>
+  </body>
+</html>
