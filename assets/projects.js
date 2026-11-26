@@ -328,6 +328,25 @@ window.PF_PROJECTS = {
         "note": "No demo: this is a Windows desktop application, it does not run in a browser. Built with OpenCode and the DeepSeek v4 Flash (FREE) model, and the interface is Portuguese only."
       }
     },
+    "claude-code-chat-backup": {
+      "shot": "./assets/shots/shot-claude-code-chat-backup.webp",
+      "demoUrl": null,
+      "codeUrl": "https://github.com/claudneysessa/claude-code-chat-backup",
+      "tags": {
+        "pt": ["C#", "WinForms", ".NET 10", "CLI", "Windows", "Claude Code"],
+        "en": ["C#", "WinForms", ".NET 10", "CLI", "Windows", "Claude Code"]
+      },
+      "pt": {
+        "name": "Claude Chat Backup",
+        "desc": "Backup e restauração das sessões das abas Code e Cowork do Claude Desktop, que ficam no disco e somem com uma reinstalação ou uma troca de computador. Gera um ZIP com o SHA-256 de cada arquivo, confere tudo antes de gravar e, ao restaurar em outra máquina, troca as pastas de projeto para onde elas estão agora sem tocar no texto das conversas. Um único executável: janela com dois cliques, linha de comando com argumentos.",
+        "note": "Sem demonstração: é um aplicativo de desktop Windows, não roda no navegador. As sessões do print são fictícias, e a interface só existe em português. Feito em sessões do Claude Code; ferramenta independente, sem vínculo com a Anthropic."
+      },
+      "en": {
+        "name": "Claude Chat Backup",
+        "desc": "Backup and restore for Claude Desktop's Code and Cowork sessions, which live on disk and vanish with a reinstall or a new computer. It writes a ZIP with every file's SHA-256, checks all of it before writing anything back and, when restoring on another machine, moves project folders to where they live now without touching the text of the conversations. One executable: a window when you double-click it, a command line when you pass arguments.",
+        "note": "No demo: this is a Windows desktop application, it does not run in a browser. The sessions in the screenshot are fictional, and the interface is Portuguese only. Built in Claude Code sessions; an independent tool, not affiliated with Anthropic."
+      }
+    },
     "flutter-ui-challenges": {
       "shot": "./assets/shots/shot-flutter-ui-challenges.webp",
       "demoUrl": "https://claudneysessa.github.io/flutter-ui-challenges/",
@@ -421,9 +440,9 @@ window.PF_PROJECTS = {
     { "id": "mcp", "slugs": ["mcp-gemini-video"], "pt": "MCP e skills para agentes", "en": "MCP servers and agent skills" },
     { "id": "ai-skills", "slugs": ["ctx404"], "pt": "Skills de IA", "en": "AI skills" },
     { "id": "games", "slugs": ["bomber-hero", "one-shot-bird"], "pt": "Jogos", "en": "Games" },
-    { "id": "tools", "slugs": ["local-token-monitor", "my-open-pins", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
+    { "id": "tools", "slugs": ["local-token-monitor", "claude-code-chat-backup", "my-open-pins", "paygo_sdk"], "pt": "Ferramentas e bibliotecas", "en": "Tools and libraries" },
     { "id": "client", "slugs": ["medina-trainer"], "pt": "Trabalho para clientes", "en": "Client work" },
-    { "id": "oss", "slugs": ["local-token-monitor", "ctx404", "bomber-hero", "one-shot-bird", "my-open-pins"], "pt": "Open Source", "en": "Open Source" },
+    { "id": "oss", "slugs": ["local-token-monitor", "claude-code-chat-backup", "ctx404", "bomber-hero", "one-shot-bird", "my-open-pins"], "pt": "Open Source", "en": "Open Source" },
     { "id": "contrib", "slugs": ["paygo_sdk", "flutter-ui-challenges", "flutter-playground", "flutter_catalog"], "pt": "Contribuições em Projetos", "en": "Project Contributions" }
   ]
   /* Um projeto pode aparecer em mais de um grupo — os grupos são recortes de
